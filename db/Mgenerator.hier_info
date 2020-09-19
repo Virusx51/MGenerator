@@ -1,0 +1,8 @@
+|MGenerator
+Out <= inst9.DB_MAX_OUTPUT_PORT_TYPE
+In => inst3.CLK
+In => inst.CLK
+In => inst2.CLK
+In => inst4.CLK
+
+
