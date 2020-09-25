@@ -8,7 +8,51 @@
 					"strict" : false
 				},
 				{
-					"name" : "In",
+					"name" : "State[4]",
+					"strict" : false
+				},
+				{
+					"name" : "State[3]",
+					"strict" : false
+				},
+				{
+					"name" : "State[2]",
+					"strict" : false
+				},
+				{
+					"name" : "State[1]",
+					"strict" : false
+				},
+				{
+					"name" : "State[0]",
+					"strict" : false
+				},
+				{
+					"name" : "ALOAD",
+					"strict" : false
+				},
+				{
+					"name" : "ASDATA[0]",
+					"strict" : false
+				},
+				{
+					"name" : "ASDATA[1]",
+					"strict" : false
+				},
+				{
+					"name" : "ASDATA[3]",
+					"strict" : false
+				},
+				{
+					"name" : "ASDATA[4]",
+					"strict" : false
+				},
+				{
+					"name" : "ASDATA[2]",
+					"strict" : false
+				},
+				{
+					"name" : "Clock",
 					"strict" : false
 				}
 			]
