@@ -1,5 +1,5 @@
 Flow report for Mgenerator
-Sat Sep 19 11:41:50 2020
+Fri Sep 25 15:48:26 2020
 Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
 
 
@@ -41,16 +41,16 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Flow Summary                                                                     ;
 +------------------------------------+---------------------------------------------+
-; Flow Status                        ; Successful - Sat Sep 19 11:41:50 2020       ;
+; Flow Status                        ; Successful - Fri Sep 25 15:48:26 2020       ;
 ; Quartus Prime Version              ; 20.1.0 Build 711 06/05/2020 SJ Lite Edition ;
 ; Revision Name                      ; Mgenerator                                  ;
 ; Top-level Entity Name              ; MGenerator                                  ;
 ; Family                             ; Cyclone IV E                                ;
-; Total logic elements               ; 5 / 6,272 ( < 1 % )                         ;
-;     Total combinational functions  ; 1 / 6,272 ( < 1 % )                         ;
-;     Dedicated logic registers      ; 4 / 6,272 ( < 1 % )                         ;
-; Total registers                    ; 4                                           ;
-; Total pins                         ; 2 / 92 ( 2 % )                              ;
+; Total logic elements               ; 16 / 6,272 ( < 1 % )                        ;
+;     Total combinational functions  ; 16 / 6,272 ( < 1 % )                        ;
+;     Dedicated logic registers      ; 5 / 6,272 ( < 1 % )                         ;
+; Total registers                    ; 5                                           ;
+; Total pins                         ; 13 / 92 ( 14 % )                            ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 0 / 276,480 ( 0 % )                         ;
 ; Embedded Multiplier 9-bit elements ; 0 / 30 ( 0 % )                              ;
@@ -65,7 +65,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 09/19/2020 11:41:12 ;
+; Start date & time ; 09/25/2020 15:45:53 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; Mgenerator          ;
 +-------------------+---------------------+
@@ -76,7 +76,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------+----------------------------------------+---------------+-------------+----------------+
 ; Assignment Name                     ; Value                                  ; Default Value ; Entity Name ; Section Id     ;
 +-------------------------------------+----------------------------------------+---------------+-------------+----------------+
-; COMPILER_SIGNATURE_ID               ; 128472102258565.160050487208216        ; --            ; --          ; --             ;
+; COMPILER_SIGNATURE_ID               ; 2543630509607.160103795304928          ; --            ; --          ; --             ;
 ; EDA_OUTPUT_DATA_FORMAT              ; Verilog Hdl                            ; --            ; --          ; eda_simulation ;
 ; EDA_RUN_TOOL_AUTOMATICALLY          ; Off                                    ; --            ; --          ; eda_simulation ;
 ; EDA_SIMULATION_TOOL                 ; ModelSim-Altera (Verilog)              ; <None>        ; --          ; --             ;
@@ -93,14 +93,14 @@ https://fpgasoftware.intel.com/eula.
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis ; 00:00:10     ; 1.0                     ; 4831 MB             ; 00:00:26                           ;
-; Fitter               ; 00:00:05     ; 1.1                     ; 6462 MB             ; 00:00:07                           ;
-; Assembler            ; 00:00:02     ; 1.0                     ; 4681 MB             ; 00:00:02                           ;
-; Timing Analyzer      ; 00:00:04     ; 1.0                     ; 4909 MB             ; 00:00:03                           ;
-; EDA Netlist Writer   ; 00:00:01     ; 1.0                     ; 4634 MB             ; 00:00:01                           ;
-; EDA Netlist Writer   ; 00:00:01     ; 1.0                     ; 4627 MB             ; 00:00:01                           ;
-; EDA Netlist Writer   ; 00:00:01     ; 1.0                     ; 4636 MB             ; 00:00:01                           ;
-; Total                ; 00:00:24     ; --                      ; --                  ; 00:00:41                           ;
+; Analysis & Synthesis ; 00:00:17     ; 1.0                     ; 4767 MB             ; 00:00:41                           ;
+; Fitter               ; 00:00:08     ; 1.0                     ; 5503 MB             ; 00:00:10                           ;
+; Assembler            ; 00:00:02     ; 1.0                     ; 4688 MB             ; 00:00:01                           ;
+; Timing Analyzer      ; 00:00:04     ; 1.0                     ; 4776 MB             ; 00:00:03                           ;
+; EDA Netlist Writer   ; 00:00:01     ; 1.0                     ; 4642 MB             ; 00:00:01                           ;
+; EDA Netlist Writer   ; 00:00:02     ; 1.0                     ; 4636 MB             ; 00:00:01                           ;
+; EDA Netlist Writer   ; 00:00:02     ; 1.0                     ; 4645 MB             ; 00:00:01                           ;
+; Total                ; 00:00:36     ; --                      ; --                  ; 00:00:58                           ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
@@ -109,26 +109,26 @@ https://fpgasoftware.intel.com/eula.
 +----------------------+------------------+------------+------------+----------------+
 ; Module Name          ; Machine Hostname ; OS Name    ; OS Version ; Processor type ;
 +----------------------+------------------+------------+------------+----------------+
-; Analysis & Synthesis ; SASHA-KOMP       ; Windows 10 ; 10.0       ; x86_64         ;
-; Fitter               ; SASHA-KOMP       ; Windows 10 ; 10.0       ; x86_64         ;
-; Assembler            ; SASHA-KOMP       ; Windows 10 ; 10.0       ; x86_64         ;
-; Timing Analyzer      ; SASHA-KOMP       ; Windows 10 ; 10.0       ; x86_64         ;
-; EDA Netlist Writer   ; SASHA-KOMP       ; Windows 10 ; 10.0       ; x86_64         ;
-; EDA Netlist Writer   ; SASHA-KOMP       ; Windows 10 ; 10.0       ; x86_64         ;
-; EDA Netlist Writer   ; SASHA-KOMP       ; Windows 10 ; 10.0       ; x86_64         ;
+; Analysis & Synthesis ; DESKTOP-4RBIJHO  ; Windows 10 ; 10.0       ; x86_64         ;
+; Fitter               ; DESKTOP-4RBIJHO  ; Windows 10 ; 10.0       ; x86_64         ;
+; Assembler            ; DESKTOP-4RBIJHO  ; Windows 10 ; 10.0       ; x86_64         ;
+; Timing Analyzer      ; DESKTOP-4RBIJHO  ; Windows 10 ; 10.0       ; x86_64         ;
+; EDA Netlist Writer   ; DESKTOP-4RBIJHO  ; Windows 10 ; 10.0       ; x86_64         ;
+; EDA Netlist Writer   ; DESKTOP-4RBIJHO  ; Windows 10 ; 10.0       ; x86_64         ;
+; EDA Netlist Writer   ; DESKTOP-4RBIJHO  ; Windows 10 ; 10.0       ; x86_64         ;
 +----------------------+------------------+------------+------------+----------------+
 
 
 ------------
 ; Flow Log ;
 ------------
-quartus_map --read_settings_files=on --write_settings_files=off Mgenerator -c Mgenerator
-quartus_fit --read_settings_files=off --write_settings_files=off Mgenerator -c Mgenerator
-quartus_asm --read_settings_files=off --write_settings_files=off Mgenerator -c Mgenerator
-quartus_sta Mgenerator -c Mgenerator
-quartus_eda --read_settings_files=off --write_settings_files=off Mgenerator -c Mgenerator
-quartus_eda --gen_testbench --tool=modelsim_oem --format=verilog --write_settings_files=off Mgenerator -c Mgenerator --vector_source=D:/apps/quartus/MGenerator/Waveform.vwf --testbench_file=D:/apps/quartus/MGenerator/simulation/qsim/Waveform.vwf.vt
-quartus_eda --write_settings_files=off --simulation=on --functional=on --flatten_buses=off --tool=modelsim_oem --format=verilog --output_directory=D:/apps/quartus/MGenerator/simulation/qsim/ Mgenerator -c Mgenerator
+quartus_map --read_settings_files=on --write_settings_files=off MGenerator -c Mgenerator
+quartus_fit --read_settings_files=off --write_settings_files=off MGenerator -c Mgenerator
+quartus_asm --read_settings_files=off --write_settings_files=off MGenerator -c Mgenerator
+quartus_sta MGenerator -c Mgenerator
+quartus_eda --read_settings_files=off --write_settings_files=off MGenerator -c Mgenerator
+quartus_eda --gen_testbench --tool=modelsim_oem --format=verilog --write_settings_files=off MGenerator -c Mgenerator --vector_source=C:/intelFPGA_lite/20.1/MGenerator/Waveform1.vwf --testbench_file=C:/intelFPGA_lite/20.1/MGenerator/simulation/qsim/Waveform1.vwf.vt
+quartus_eda --write_settings_files=off --simulation=on --functional=on --flatten_buses=off --tool=modelsim_oem --format=verilog --output_directory=C:/intelFPGA_lite/20.1/MGenerator/simulation/qsim/ MGenerator -c Mgenerator
 
 
 

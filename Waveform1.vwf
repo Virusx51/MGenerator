@@ -1,14 +1,14 @@
 /*<simulation_settings>
-<ftestbench_cmd>quartus_eda --gen_testbench --tool=modelsim_oem --format=verilog --write_settings_files=off Mgenerator -c Mgenerator --vector_source="D:/apps/quartus/MGenerator/Waveform.vwf" --testbench_file="D:/apps/quartus/MGenerator/simulation/qsim/Waveform.vwf.vt"</ftestbench_cmd>
-<ttestbench_cmd>quartus_eda --gen_testbench --tool=modelsim_oem --format=verilog --write_settings_files=off Mgenerator -c Mgenerator --vector_source="D:/apps/quartus/MGenerator/Waveform.vwf" --testbench_file="D:/apps/quartus/MGenerator/simulation/qsim/Waveform.vwf.vt"</ttestbench_cmd>
-<fnetlist_cmd>quartus_eda --write_settings_files=off --simulation --functional=on --flatten_buses=off --tool=modelsim_oem --format=verilog --output_directory="D:/apps/quartus/MGenerator/simulation/qsim/" Mgenerator -c Mgenerator</fnetlist_cmd>
-<tnetlist_cmd>quartus_eda --write_settings_files=off --simulation --functional=off --flatten_buses=off --timescale=1ps --tool=modelsim_oem --format=verilog --output_directory="D:/apps/quartus/MGenerator/simulation/qsim/" Mgenerator -c Mgenerator</tnetlist_cmd>
+<ftestbench_cmd>quartus_eda --gen_testbench --tool=modelsim_oem --format=verilog --write_settings_files=off MGenerator -c Mgenerator --vector_source="C:/intelFPGA_lite/20.1/MGenerator/Waveform1.vwf" --testbench_file="C:/intelFPGA_lite/20.1/MGenerator/simulation/qsim/Waveform1.vwf.vt"</ftestbench_cmd>
+<ttestbench_cmd>quartus_eda --gen_testbench --tool=modelsim_oem --format=verilog --write_settings_files=off MGenerator -c Mgenerator --vector_source="C:/intelFPGA_lite/20.1/MGenerator/Waveform1.vwf" --testbench_file="C:/intelFPGA_lite/20.1/MGenerator/simulation/qsim/Waveform1.vwf.vt"</ttestbench_cmd>
+<fnetlist_cmd>quartus_eda --write_settings_files=off --simulation --functional=on --flatten_buses=off --tool=modelsim_oem --format=verilog --output_directory="C:/intelFPGA_lite/20.1/MGenerator/simulation/qsim/" MGenerator -c Mgenerator</fnetlist_cmd>
+<tnetlist_cmd>quartus_eda --write_settings_files=off --simulation --functional=off --flatten_buses=off --timescale=1ps --tool=modelsim_oem --format=verilog --output_directory="C:/intelFPGA_lite/20.1/MGenerator/simulation/qsim/" MGenerator -c Mgenerator</tnetlist_cmd>
 <modelsim_script>onerror {exit -code 1}
 vlib work
 vlog -work work Mgenerator.vo
-vlog -work work Waveform.vwf.vt
+vlog -work work Waveform1.vwf.vt
 vsim -novopt -c -t 1ps -L cycloneive_ver -L altera_ver -L altera_mf_ver -L 220model_ver -L sgate_ver -L altera_lnsim_ver work.MGenerator_vlg_vec_tst
-vcd file -direction Mgenerator.msim.vcd
+vcd file -direction MGenerator.msim.vcd
 vcd add -internal MGenerator_vlg_vec_tst/*
 vcd add -internal MGenerator_vlg_vec_tst/i1/*
 proc simTimestamp {} {
@@ -25,9 +25,9 @@ quit -f
 <modelsim_script_timing>onerror {exit -code 1}
 vlib work
 vlog -work work Mgenerator.vo
-vlog -work work Waveform.vwf.vt
+vlog -work work Waveform1.vwf.vt
 vsim -novopt -c -t 1ps -L cycloneive_ver -L altera_ver -L altera_mf_ver -L 220model_ver -L sgate_ver -L altera_lnsim_ver work.MGenerator_vlg_vec_tst
-vcd file -direction Mgenerator.msim.vcd
+vcd file -direction MGenerator.msim.vcd
 vcd add -internal MGenerator_vlg_vec_tst/*
 vcd add -internal MGenerator_vlg_vec_tst/i1/*
 proc simTimestamp {} {
@@ -92,10 +92,20 @@ SIGNAL("ASDATA")
 {
 	VALUE_TYPE = NINE_LEVEL_BIT;
 	SIGNAL_TYPE = BUS;
-	WIDTH = 4;
+	WIDTH = 5;
 	LSB_INDEX = 0;
 	DIRECTION = INPUT;
 	PARENT = "";
+}
+
+SIGNAL("ASDATA[4]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = INPUT;
+	PARENT = "ASDATA";
 }
 
 SIGNAL("ASDATA[3]")
@@ -162,10 +172,20 @@ SIGNAL("STATE")
 {
 	VALUE_TYPE = NINE_LEVEL_BIT;
 	SIGNAL_TYPE = BUS;
-	WIDTH = 4;
+	WIDTH = 5;
 	LSB_INDEX = 0;
 	DIRECTION = OUTPUT;
 	PARENT = "";
+}
+
+SIGNAL("STATE[4]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "STATE";
 }
 
 SIGNAL("STATE[3]")
@@ -213,9 +233,17 @@ TRANSITION_LIST("ALOAD")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL 0 FOR 10.0;
 		LEVEL 1 FOR 10.0;
-		LEVEL 0 FOR 980.0;
+		LEVEL 0 FOR 990.0;
+	}
+}
+
+TRANSITION_LIST("ASDATA[4]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL 0 FOR 1000.0;
 	}
 }
 
@@ -251,9 +279,8 @@ TRANSITION_LIST("ASDATA[0]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL 0 FOR 10.0;
 		LEVEL 1 FOR 10.0;
-		LEVEL 0 FOR 980.0;
+		LEVEL 0 FOR 990.0;
 	}
 }
 
@@ -272,6 +299,15 @@ TRANSITION_LIST("CLOCK")
 }
 
 TRANSITION_LIST("Out")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("STATE[4]")
 {
 	NODE
 	{
@@ -332,12 +368,12 @@ DISPLAY_LINE
 	RADIX = Binary;
 	TREE_INDEX = 1;
 	TREE_LEVEL = 0;
-	CHILDREN = 2, 3, 4, 5;
+	CHILDREN = 2, 3, 4, 5, 6;
 }
 
 DISPLAY_LINE
 {
-	CHANNEL = "ASDATA[3]";
+	CHANNEL = "ASDATA[4]";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Binary;
 	TREE_INDEX = 2;
@@ -347,7 +383,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "ASDATA[2]";
+	CHANNEL = "ASDATA[3]";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Binary;
 	TREE_INDEX = 3;
@@ -357,7 +393,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "ASDATA[1]";
+	CHANNEL = "ASDATA[2]";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Binary;
 	TREE_INDEX = 4;
@@ -367,7 +403,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "ASDATA[0]";
+	CHANNEL = "ASDATA[1]";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Binary;
 	TREE_INDEX = 5;
@@ -377,16 +413,17 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "CLOCK";
+	CHANNEL = "ASDATA[0]";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Binary;
 	TREE_INDEX = 6;
-	TREE_LEVEL = 0;
+	TREE_LEVEL = 1;
+	PARENT = 1;
 }
 
 DISPLAY_LINE
 {
-	CHANNEL = "Out";
+	CHANNEL = "CLOCK";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Binary;
 	TREE_INDEX = 7;
@@ -395,42 +432,31 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "STATE";
-	EXPAND_STATUS = EXPANDED;
+	CHANNEL = "Out";
+	EXPAND_STATUS = COLLAPSED;
 	RADIX = Binary;
 	TREE_INDEX = 8;
 	TREE_LEVEL = 0;
-	CHILDREN = 9, 10, 11, 12;
 }
 
 DISPLAY_LINE
 {
-	CHANNEL = "STATE[0]";
-	EXPAND_STATUS = COLLAPSED;
+	CHANNEL = "STATE";
+	EXPAND_STATUS = EXPANDED;
 	RADIX = Binary;
 	TREE_INDEX = 9;
-	TREE_LEVEL = 1;
-	PARENT = 8;
+	TREE_LEVEL = 0;
+	CHILDREN = 10, 11, 12, 13, 14;
 }
 
 DISPLAY_LINE
 {
-	CHANNEL = "STATE[1]";
+	CHANNEL = "STATE[4]";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Binary;
 	TREE_INDEX = 10;
 	TREE_LEVEL = 1;
-	PARENT = 8;
-}
-
-DISPLAY_LINE
-{
-	CHANNEL = "STATE[2]";
-	EXPAND_STATUS = COLLAPSED;
-	RADIX = Binary;
-	TREE_INDEX = 11;
-	TREE_LEVEL = 1;
-	PARENT = 8;
+	PARENT = 9;
 }
 
 DISPLAY_LINE
@@ -438,9 +464,39 @@ DISPLAY_LINE
 	CHANNEL = "STATE[3]";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Binary;
+	TREE_INDEX = 11;
+	TREE_LEVEL = 1;
+	PARENT = 9;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "STATE[2]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
 	TREE_INDEX = 12;
 	TREE_LEVEL = 1;
-	PARENT = 8;
+	PARENT = 9;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "STATE[1]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 13;
+	TREE_LEVEL = 1;
+	PARENT = 9;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "STATE[0]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 14;
+	TREE_LEVEL = 1;
+	PARENT = 9;
 }
 
 TIME_BAR
