@@ -1,28 +1,28 @@
 # do MGenerator.do
 # ** Warning: (vlib-34) Library already exists at "work".
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 15:48:27 on Sep 25,2020
+# Start time: 11:34:47 on Sep 26,2020
 # vlog -work work Mgenerator.vo 
-# -- Compiling module MGenerator
+# -- Compiling module Multi_MGenerator
 # -- Compiling module hard_block
 # 
 # Top level modules:
-# 	MGenerator
-# End time: 15:48:28 on Sep 25,2020, Elapsed time: 0:00:01
+# 	Multi_MGenerator
+# End time: 11:34:47 on Sep 26,2020, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 15:48:28 on Sep 25,2020
-# vlog -work work Waveform1.vwf.vt 
-# -- Compiling module MGenerator_vlg_vec_tst
+# Start time: 11:34:47 on Sep 26,2020
+# vlog -work work Waveform2.vwf.vt 
+# -- Compiling module Multi_MGenerator_vlg_vec_tst
 # 
 # Top level modules:
-# 	MGenerator_vlg_vec_tst
-# End time: 15:48:28 on Sep 25,2020, Elapsed time: 0:00:00
+# 	Multi_MGenerator_vlg_vec_tst
+# End time: 11:34:47 on Sep 26,2020, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
-# vsim -novopt -c -t 1ps -L cycloneive_ver -L altera_ver -L altera_mf_ver -L 220model_ver -L sgate_ver -L altera_lnsim_ver work.MGenerator_vlg_vec_tst 
-# Start time: 15:48:28 on Sep 25,2020
-# Loading work.MGenerator_vlg_vec_tst
-# Loading work.MGenerator
+# vsim -novopt -c -t 1ps -L cycloneive_ver -L altera_ver -L altera_mf_ver -L 220model_ver -L sgate_ver -L altera_lnsim_ver work.Multi_MGenerator_vlg_vec_tst 
+# Start time: 11:34:47 on Sep 26,2020
+# Loading work.Multi_MGenerator_vlg_vec_tst
+# Loading work.Multi_MGenerator
 # Loading work.hard_block
 # Loading cycloneive_ver.cycloneive_io_obuf
 # Loading cycloneive_ver.cycloneive_io_ibuf
@@ -33,7 +33,7 @@
 # Loading altera_ver.dffeas
 # Loading altera_ver.PRIM_GDFF_LOW
 # after#26
-# ** Note: $finish    : Waveform1.vwf.vt(51)
-#    Time: 1 us  Iteration: 0  Instance: /MGenerator_vlg_vec_tst
-# End time: 15:48:28 on Sep 25,2020, Elapsed time: 0:00:00
+# ** Note: $finish    : Waveform2.vwf.vt(53)
+#    Time: 1 us  Iteration: 0  Instance: /Multi_MGenerator_vlg_vec_tst
+# End time: 11:34:47 on Sep 26,2020, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
