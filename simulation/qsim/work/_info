@@ -9,42 +9,42 @@ z2
 cModel Technology
 Z0 dD:/apps/quartus/MGenerator/simulation/qsim
 vhard_block
-Z1 !s110 1601038589
+Z1 !s110 1601109606
 !i10b 1
-!s100 _<^@RUi@I4US5Lg5XgEGR2
-IjelBc87;[GMU7?CZhmY];3
+!s100 PCe3S45B8ACa5j<coh@MZ0
+Iz1i5Fb?ff@X538;lTZ9fR1
 Z2 VDg1SIo80bB@j0V0VzS_@n1
 R0
-Z3 w1601038589
+Z3 w1601109605
 Z4 8Mgenerator.vo
 Z5 FMgenerator.vo
-L0 669
+L0 706
 Z6 OV;L;10.5b;63
 r1
 !s85 0
 31
-Z7 !s108 1601038589.000000
+Z7 !s108 1601109606.000000
 Z8 !s107 Mgenerator.vo|
 Z9 !s90 -work|work|Mgenerator.vo|
 !i113 1
 Z10 o-work work
 Z11 tCvgOpt 0
 vMGenerator
-R1
+!s110 1601038589
 !i10b 1
 !s100 PM:UJGX`49Ol<>cRBoWn:1
 IaDca15Q5mfbMIYo?GjI_81
 R2
 R0
-R3
+w1601038589
 R4
 R5
-L0 32
+Z12 L0 32
 R6
 r1
 !s85 0
 31
-R7
+Z13 !s108 1601038589.000000
 R8
 R9
 !i113 1
@@ -61,15 +61,59 @@ R0
 w1601038588
 8Waveform.vwf.vt
 FWaveform.vwf.vt
-L0 30
+Z14 L0 30
 R6
 r1
 !s85 0
 31
-R7
+R13
 !s107 Waveform.vwf.vt|
 !s90 -work|work|Waveform.vwf.vt|
 !i113 1
 R10
 R11
 n@m@generator_vlg_vec_tst
+vMultiChannelMGenerator
+R1
+!i10b 1
+!s100 9<JmE8`Tki6D]7F7[cejX0
+IN8PgF`j=]N[iUm1Dmk;e83
+R2
+R0
+R3
+R4
+R5
+R12
+R6
+r1
+!s85 0
+31
+R7
+R8
+R9
+!i113 1
+R10
+R11
+n@multi@channel@m@generator
+vMultiChannelMGenerator_vlg_vec_tst
+R1
+!i10b 1
+!s100 IGL^_48Q1kK3QX`MaS=do0
+I;ZOFNWRi:<k9Ij;i<WGcm0
+R2
+R0
+w1601109604
+8Waveform1.vwf.vt
+FWaveform1.vwf.vt
+R14
+R6
+r1
+!s85 0
+31
+R7
+!s107 Waveform1.vwf.vt|
+!s90 -work|work|Waveform1.vwf.vt|
+!i113 1
+R10
+R11
+n@multi@channel@m@generator_vlg_vec_tst

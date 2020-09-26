@@ -1,24 +1,25 @@
-|MGenerator
-Out <= inst3.DB_MAX_OUTPUT_PORT_TYPE
+|MultiChannelMGenerator
+Out1 <= inst3.DB_MAX_OUTPUT_PORT_TYPE
 State[0] <= inst1.DB_MAX_OUTPUT_PORT_TYPE
 State[1] <= inst10.DB_MAX_OUTPUT_PORT_TYPE
-State[2] <= inst11.DB_MAX_OUTPUT_PORT_TYPE
+State[2] <= <GND>
 State[3] <= inst12.DB_MAX_OUTPUT_PORT_TYPE
 State[4] <= inst13.DB_MAX_OUTPUT_PORT_TYPE
-ALOAD => inst11.ALOAD
-ALOAD => inst1.ALOAD
-ALOAD => inst10.ALOAD
 ALOAD => inst12.ALOAD
+ALOAD => inst1.ALOAD
 ALOAD => inst13.ALOAD
+ALOAD => inst11.ALOAD
+ALOAD => inst10.ALOAD
 ASDATA[0] => inst1.ADATA
 ASDATA[1] => inst10.ADATA
 ASDATA[2] => inst11.ADATA
 ASDATA[3] => inst12.ADATA
 ASDATA[4] => inst13.ADATA
-Clock => inst11.CLK
-Clock => inst1.CLK
-Clock => inst10.CLK
 Clock => inst12.CLK
+Clock => inst1.CLK
 Clock => inst13.CLK
+Clock => inst11.CLK
+Clock => inst10.CLK
+Out2 <= inst7.DB_MAX_OUTPUT_PORT_TYPE
 
 
