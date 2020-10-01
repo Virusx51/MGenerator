@@ -1,5 +1,5 @@
 Analysis & Synthesis report for Mgenerator
-Sat Sep 26 11:30:49 2020
+Thu Oct 01 21:10:40 2020
 Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
 
 
@@ -43,7 +43,7 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Sat Sep 26 11:30:49 2020       ;
+; Analysis & Synthesis Status        ; Successful - Thu Oct 01 21:10:40 2020       ;
 ; Quartus Prime Version              ; 20.1.0 Build 711 06/05/2020 SJ Lite Edition ;
 ; Revision Name                      ; Mgenerator                                  ;
 ; Top-level Entity Name              ; Multi_MGenerator                            ;
@@ -252,7 +252,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:01     ;
+; Top            ; 00:00:00     ;
 +----------------+--------------+
 
 
@@ -262,7 +262,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
-    Info: Processing started: Sat Sep 26 11:30:31 2020
+    Info: Processing started: Thu Oct 01 21:10:31 2020
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off MGenerator -c Mgenerator
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
@@ -270,6 +270,8 @@ Info (12021): Found 1 design units, including 1 entities, in source file mgenera
     Info (12023): Found entity 1: MGenerator
 Info (12021): Found 1 design units, including 1 entities, in source file multi_mgenerator.bdf
     Info (12023): Found entity 1: Multi_MGenerator
+Info (12021): Found 1 design units, including 1 entities, in source file internal_mgenerator.bdf
+    Info (12023): Found entity 1: Internal_MGenerator
 Info (12127): Elaborating entity "Multi_MGenerator" for the top level hierarchy
 Warning (13004): Presettable and clearable registers converted to equivalent circuits with latches. Registers power-up to an undefined state, and DEVCLRn places the registers in an undefined state.
     Warning (13310): Register "inst12" is converted into an equivalent circuit using register "inst12~_emulated" and latch "inst12~1"
@@ -286,8 +288,8 @@ Info (21057): Implemented 31 device resources after synthesis - the final resour
     Info (21061): Implemented 17 logic cells
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 7 warnings
     Info: Peak virtual memory: 4767 megabytes
-    Info: Processing ended: Sat Sep 26 11:30:49 2020
-    Info: Elapsed time: 00:00:18
-    Info: Total CPU time (on all processors): 00:00:43
+    Info: Processing ended: Thu Oct 01 21:10:40 2020
+    Info: Elapsed time: 00:00:09
+    Info: Total CPU time (on all processors): 00:00:21
 
 
