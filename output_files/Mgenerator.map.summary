@@ -1,10 +1,10 @@
-Analysis & Synthesis Status : Successful - Thu Oct 01 13:46:51 2020
+Analysis & Synthesis Status : Successful - Fri Oct 02 12:27:15 2020
 Quartus Prime Version : 20.1.0 Build 711 06/05/2020 SJ Lite Edition
 Revision Name : Mgenerator
-Top-level Entity Name : MGeneratorInConnect
+Top-level Entity Name : deBruijn
 Family : Cyclone IV E
-Total logic elements : 15
-    Total combinational functions : 15
+Total logic elements : 17
+    Total combinational functions : 17
     Dedicated logic registers : 5
 Total registers : 5
 Total pins : 13
