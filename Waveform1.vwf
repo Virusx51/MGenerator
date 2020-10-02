@@ -20,6 +20,7 @@ proc simTimestamp {} {
 after 2500 simTimestamp
 run -all
 quit -f
+
 </modelsim_script>
 <modelsim_script_timing>onerror {exit -code 1}
 vlib work
@@ -38,6 +39,7 @@ proc simTimestamp {} {
 after 2500 simTimestamp
 run -all
 quit -f
+
 </modelsim_script_timing>
 <hdl_lang>verilog</hdl_lang>
 </simulation_settings>*/
@@ -72,7 +74,7 @@ HEADER
 	DATA_DURATION = 1000.0;
 	SIMULATION_TIME = 0.0;
 	GRID_PHASE = 0.0;
-	GRID_PERIOD = 10.0;
+	GRID_PERIOD = 5.0;
 	GRID_DUTY_CYCLE = 50;
 }
 
@@ -241,8 +243,8 @@ TRANSITION_LIST("ALOAD")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL 1 FOR 10.0;
-		LEVEL 0 FOR 990.0;
+		LEVEL 1 FOR 5.0;
+		LEVEL 0 FOR 995.0;
 	}
 }
 

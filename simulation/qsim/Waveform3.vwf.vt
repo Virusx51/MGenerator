@@ -19,31 +19,33 @@
 // the top level entity of the current Quartus project .The user can use this   
 // testbench to simulate his design using a third-party simulation tool .       
 // *****************************************************************************
-// Generated on "10/02/2020 12:28:34"
+// Generated on "10/02/2020 14:24:05"
                                                                                 
-// Verilog Test Bench (with test vectors) for design :                          deBruijn
+// Verilog Test Bench (with test vectors) for design :                          MultiChannelMGenerator
 // 
 // Simulation tool : 3rd Party
 // 
 
 `timescale 1 ps/ 1 ps
-module deBruijn_vlg_vec_tst();
+module MultiChannelMGenerator_vlg_vec_tst();
 // constants                                           
 // general purpose registers
 reg ALOAD;
 reg [4:0] ASDATA;
 reg Clock;
 // wires                                               
-wire Out;
+wire Out1;
+wire Out2;
 wire [4:0] State;
 
 // assign statements (if any)                          
-deBruijn i1 (
+MultiChannelMGenerator i1 (
 // port map - connection between master ports and signals/registers   
 	.ALOAD(ALOAD),
 	.ASDATA(ASDATA),
 	.Clock(Clock),
-	.Out(Out),
+	.Out1(Out1),
+	.Out2(Out2),
 	.State(State)
 );
 initial 

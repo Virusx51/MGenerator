@@ -89,7 +89,7 @@ https://fpgasoftware.intel.com/eula.
 	(output)
 	(rect 224 408 400 424)
 	(text "OUTPUT" (rect 137 0 175 10)(font "Arial" (font_size 6)))
-	(text "Out1" (rect 5 0 29 17)(font "Intel Clear" ))
+	(text "Out1" (rect 5 0 28 17)(font "Intel Clear" ))
 	(pt 176 8)
 	(drawing
 		(line (pt 176 8)(pt 124 8))
@@ -106,7 +106,7 @@ https://fpgasoftware.intel.com/eula.
 	(output)
 	(rect 224 296 400 312)
 	(text "OUTPUT" (rect 137 0 175 10)(font "Arial" (font_size 6)))
-	(text "Out2" (rect 5 0 29 17)(font "Intel Clear" ))
+	(text "Out2" (rect 5 0 28 17)(font "Intel Clear" ))
 	(pt 176 8)
 	(drawing
 		(line (pt 176 8)(pt 124 8))
@@ -875,26 +875,6 @@ https://fpgasoftware.intel.com/eula.
 	(bus)
 )
 (connector
-	(pt 472 544)
-	(pt 536 544)
-)
-(connector
-	(pt 536 544)
-	(pt 632 544)
-)
-(connector
-	(pt 632 544)
-	(pt 728 544)
-)
-(connector
-	(pt 728 544)
-	(pt 824 544)
-)
-(connector
-	(pt 824 544)
-	(pt 920 544)
-)
-(connector
 	(pt 416 416)
 	(pt 400 416)
 )
@@ -1056,10 +1036,6 @@ https://fpgasoftware.intel.com/eula.
 	(pt 760 392)
 )
 (connector
-	(pt 760 392)
-	(pt 760 448)
-)
-(connector
 	(pt 952 232)
 	(pt 952 296)
 )
@@ -1120,6 +1096,91 @@ https://fpgasoftware.intel.com/eula.
 	(pt 888 416)
 	(pt 888 448)
 )
+(connector
+	(pt 480 544)
+	(pt 480 480)
+)
+(connector
+	(pt 480 480)
+	(pt 504 480)
+)
+(connector
+	(pt 472 544)
+	(pt 480 544)
+)
+(connector
+	(pt 480 544)
+	(pt 536 544)
+)
+(connector
+	(pt 600 480)
+	(pt 576 480)
+)
+(connector
+	(pt 576 480)
+	(pt 576 544)
+)
+(connector
+	(pt 536 544)
+	(pt 576 544)
+)
+(connector
+	(pt 576 544)
+	(pt 632 544)
+)
+(connector
+	(pt 696 480)
+	(pt 672 480)
+)
+(connector
+	(pt 672 480)
+	(pt 672 544)
+)
+(connector
+	(pt 632 544)
+	(pt 672 544)
+)
+(connector
+	(pt 672 544)
+	(pt 728 544)
+)
+(connector
+	(pt 792 480)
+	(pt 768 480)
+)
+(connector
+	(pt 768 480)
+	(pt 768 544)
+)
+(connector
+	(pt 728 544)
+	(pt 768 544)
+)
+(connector
+	(pt 768 544)
+	(pt 824 544)
+)
+(connector
+	(pt 888 480)
+	(pt 864 480)
+)
+(connector
+	(pt 864 480)
+	(pt 864 544)
+)
+(connector
+	(pt 824 544)
+	(pt 864 544)
+)
+(connector
+	(pt 864 544)
+	(pt 920 544)
+)
+(connector
+	(text "State[2]" (rect 744 406 761 443)(font "Intel Clear" )(vertical))
+	(pt 760 392)
+	(pt 760 448)
+)
 (junction (pt 792 552))
 (junction (pt 688 576))
 (junction (pt 784 576))
@@ -1153,3 +1214,8 @@ https://fpgasoftware.intel.com/eula.
 (junction (pt 568 448))
 (junction (pt 664 448))
 (junction (pt 760 448))
+(junction (pt 480 544))
+(junction (pt 576 544))
+(junction (pt 672 544))
+(junction (pt 768 544))
+(junction (pt 864 544))
