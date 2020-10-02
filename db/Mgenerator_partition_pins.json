@@ -4,7 +4,7 @@
 			"name" : "Top",
 			"pins" : [
 				{
-					"name" : "Out1",
+					"name" : "OUT",
 					"strict" : false
 				},
 				{
@@ -25,10 +25,6 @@
 				},
 				{
 					"name" : "STATE[0]",
-					"strict" : false
-				},
-				{
-					"name" : "Out2",
 					"strict" : false
 				},
 				{
