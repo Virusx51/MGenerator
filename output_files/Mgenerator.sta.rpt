@@ -1,5 +1,5 @@
 Timing Analyzer report for Mgenerator
-Fri Oct 02 16:08:43 2020
+Thu Nov 12 21:16:21 2020
 Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
 
 
@@ -112,7 +112,7 @@ https://fpgasoftware.intel.com/eula.
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processor 2            ;   0.3%      ;
+;     Processor 2            ;   0.2%      ;
 ;     Processors 3-4         ;   0.2%      ;
 +----------------------------+-------------+
 
@@ -132,7 +132,7 @@ https://fpgasoftware.intel.com/eula.
 +------------+-----------------+------------+---------------------------------------------------------------+
 ; Fmax       ; Restricted Fmax ; Clock Name ; Note                                                          ;
 +------------+-----------------+------------+---------------------------------------------------------------+
-; 376.65 MHz ; 250.0 MHz       ; CLOCK      ; limit due to minimum period restriction (max I/O toggle rate) ;
+; 424.81 MHz ; 250.0 MHz       ; CLOCK      ; limit due to minimum period restriction (max I/O toggle rate) ;
 +------------+-----------------+------------+---------------------------------------------------------------+
 This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
 
@@ -148,7 +148,7 @@ HTML report is unavailable in plain text report export.
 +-------+--------+--------------------+
 ; Clock ; Slack  ; End Point TNS      ;
 +-------+--------+--------------------+
-; CLOCK ; -2.193 ; -10.124            ;
+; CLOCK ; -1.658 ; -7.864             ;
 +-------+--------+--------------------+
 
 
@@ -157,7 +157,7 @@ HTML report is unavailable in plain text report export.
 +-------+-------+--------------------+
 ; Clock ; Slack ; End Point TNS      ;
 +-------+-------+--------------------+
-; CLOCK ; 0.842 ; 0.000              ;
+; CLOCK ; 0.761 ; 0.000              ;
 +-------+-------+--------------------+
 
 
@@ -189,120 +189,114 @@ HTML report is unavailable in plain text report export.
 +-------+--------+----------------------------------+
 
 
-+------------------------------------------------------------------------------------------------------------------+
-; Slow 1200mV 85C Model Setup: 'CLOCK'                                                                             ;
-+--------+-----------------+-----------------+--------------+-------------+--------------+------------+------------+
-; Slack  ; From Node       ; To Node         ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
-+--------+-----------------+-----------------+--------------+-------------+--------------+------------+------------+
-; -2.193 ; inst1~1         ; inst~_emulated  ; ALOAD        ; CLOCK       ; 0.500        ; -0.204     ; 2.464      ;
-; -2.187 ; inst4~1         ; inst~_emulated  ; ALOAD        ; CLOCK       ; 0.500        ; -0.202     ; 2.460      ;
-; -2.151 ; inst~1          ; inst~_emulated  ; ALOAD        ; CLOCK       ; 0.500        ; -0.203     ; 2.423      ;
-; -2.144 ; inst2~1         ; inst~_emulated  ; ALOAD        ; CLOCK       ; 0.500        ; -0.175     ; 2.444      ;
-; -2.072 ; inst2~1         ; inst3~_emulated ; ALOAD        ; CLOCK       ; 0.500        ; -0.175     ; 2.372      ;
-; -2.017 ; inst3~1         ; inst~_emulated  ; ALOAD        ; CLOCK       ; 0.500        ; -0.203     ; 2.289      ;
-; -1.981 ; inst1~1         ; inst2~_emulated ; ALOAD        ; CLOCK       ; 0.500        ; -0.204     ; 2.252      ;
-; -1.978 ; inst~1          ; inst1~_emulated ; ALOAD        ; CLOCK       ; 0.500        ; -0.203     ; 2.250      ;
-; -1.900 ; inst3~1         ; inst4~_emulated ; ALOAD        ; CLOCK       ; 0.500        ; -0.203     ; 2.172      ;
-; -1.655 ; inst1~_emulated ; inst~_emulated  ; CLOCK        ; CLOCK       ; 1.000        ; -0.064     ; 2.586      ;
-; -1.653 ; inst4~_emulated ; inst~_emulated  ; CLOCK        ; CLOCK       ; 1.000        ; -0.064     ; 2.584      ;
-; -1.649 ; ALOAD           ; inst~_emulated  ; ALOAD        ; CLOCK       ; 0.500        ; 1.995      ; 4.119      ;
-; -1.606 ; inst~_emulated  ; inst~_emulated  ; CLOCK        ; CLOCK       ; 1.000        ; -0.064     ; 2.537      ;
-; -1.495 ; inst3~_emulated ; inst~_emulated  ; CLOCK        ; CLOCK       ; 1.000        ; -0.064     ; 2.426      ;
-; -1.458 ; inst2~_emulated ; inst~_emulated  ; CLOCK        ; CLOCK       ; 1.000        ; -0.064     ; 2.389      ;
-; -1.443 ; inst1~_emulated ; inst2~_emulated ; CLOCK        ; CLOCK       ; 1.000        ; -0.064     ; 2.374      ;
-; -1.437 ; ALOAD           ; inst2~_emulated ; ALOAD        ; CLOCK       ; 0.500        ; 1.995      ; 3.907      ;
-; -1.433 ; inst~_emulated  ; inst1~_emulated ; CLOCK        ; CLOCK       ; 1.000        ; -0.064     ; 2.364      ;
-; -1.424 ; ALOAD           ; inst1~_emulated ; ALOAD        ; CLOCK       ; 0.500        ; 1.995      ; 3.894      ;
-; -1.386 ; inst2~_emulated ; inst3~_emulated ; CLOCK        ; CLOCK       ; 1.000        ; -0.064     ; 2.317      ;
-; -1.376 ; ALOAD           ; inst3~_emulated ; ALOAD        ; CLOCK       ; 0.500        ; 1.995      ; 3.846      ;
-; -1.375 ; inst3~_emulated ; inst4~_emulated ; CLOCK        ; CLOCK       ; 1.000        ; -0.064     ; 2.306      ;
-; -1.342 ; ALOAD           ; inst4~_emulated ; ALOAD        ; CLOCK       ; 0.500        ; 1.995      ; 3.812      ;
-; -0.956 ; ALOAD           ; inst~_emulated  ; ALOAD        ; CLOCK       ; 1.000        ; 1.995      ; 3.926      ;
-; -0.744 ; ALOAD           ; inst2~_emulated ; ALOAD        ; CLOCK       ; 1.000        ; 1.995      ; 3.714      ;
-; -0.730 ; ALOAD           ; inst1~_emulated ; ALOAD        ; CLOCK       ; 1.000        ; 1.995      ; 3.700      ;
-; -0.682 ; ALOAD           ; inst3~_emulated ; ALOAD        ; CLOCK       ; 1.000        ; 1.995      ; 3.652      ;
-; -0.653 ; ALOAD           ; inst4~_emulated ; ALOAD        ; CLOCK       ; 1.000        ; 1.995      ; 3.623      ;
-; -0.605 ; inst2~1         ; inst2~_emulated ; ALOAD        ; CLOCK       ; 0.500        ; -0.175     ; 0.905      ;
-; -0.454 ; inst1~1         ; inst1~_emulated ; ALOAD        ; CLOCK       ; 0.500        ; -0.204     ; 0.725      ;
-; -0.288 ; inst4~1         ; inst4~_emulated ; ALOAD        ; CLOCK       ; 0.500        ; -0.202     ; 0.561      ;
-; -0.285 ; inst3~1         ; inst3~_emulated ; ALOAD        ; CLOCK       ; 0.500        ; -0.203     ; 0.557      ;
-+--------+-----------------+-----------------+--------------+-------------+--------------+------------+------------+
++--------------------------------------------------------------------------------------------------------------------+
+; Slow 1200mV 85C Model Setup: 'CLOCK'                                                                               ;
++--------+------------------+------------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node        ; To Node          ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+------------------+------------------+--------------+-------------+--------------+------------+------------+
+; -1.658 ; ALOAD            ; inst12~_emulated ; ALOAD        ; CLOCK       ; 0.500        ; 1.995      ; 4.128      ;
+; -1.598 ; ALOAD            ; inst11~_emulated ; ALOAD        ; CLOCK       ; 0.500        ; 1.995      ; 4.068      ;
+; -1.581 ; ALOAD            ; inst1~_emulated  ; ALOAD        ; CLOCK       ; 0.500        ; 1.995      ; 4.051      ;
+; -1.567 ; inst10~1         ; inst12~_emulated ; ALOAD        ; CLOCK       ; 0.500        ; -0.213     ; 1.829      ;
+; -1.557 ; ALOAD            ; inst10~_emulated ; ALOAD        ; CLOCK       ; 0.500        ; 1.995      ; 4.027      ;
+; -1.522 ; inst11~1         ; inst10~_emulated ; ALOAD        ; CLOCK       ; 0.500        ; -0.211     ; 1.786      ;
+; -1.478 ; inst10~1         ; inst1~_emulated  ; ALOAD        ; CLOCK       ; 0.500        ; -0.213     ; 1.740      ;
+; -1.475 ; inst12~1         ; inst11~_emulated ; ALOAD        ; CLOCK       ; 0.500        ; -0.212     ; 1.738      ;
+; -1.470 ; ALOAD            ; inst2~_emulated  ; ALOAD        ; CLOCK       ; 0.500        ; 1.995      ; 3.940      ;
+; -1.457 ; inst2~1          ; inst12~_emulated ; ALOAD        ; CLOCK       ; 0.500        ; -0.212     ; 1.720      ;
+; -1.430 ; inst11~1         ; inst12~_emulated ; ALOAD        ; CLOCK       ; 0.500        ; -0.211     ; 1.694      ;
+; -1.411 ; inst1~1          ; inst2~_emulated  ; ALOAD        ; CLOCK       ; 0.500        ; -0.213     ; 1.673      ;
+; -1.354 ; inst2~_emulated  ; inst12~_emulated ; CLOCK        ; CLOCK       ; 1.000        ; -0.064     ; 2.285      ;
+; -1.269 ; inst10~_emulated ; inst12~_emulated ; CLOCK        ; CLOCK       ; 1.000        ; -0.064     ; 2.200      ;
+; -1.224 ; inst11~_emulated ; inst10~_emulated ; CLOCK        ; CLOCK       ; 1.000        ; -0.064     ; 2.155      ;
+; -1.205 ; inst12~_emulated ; inst11~_emulated ; CLOCK        ; CLOCK       ; 1.000        ; -0.064     ; 2.136      ;
+; -1.192 ; inst10~_emulated ; inst1~_emulated  ; CLOCK        ; CLOCK       ; 1.000        ; -0.064     ; 2.123      ;
+; -1.139 ; inst1~_emulated  ; inst2~_emulated  ; CLOCK        ; CLOCK       ; 1.000        ; -0.064     ; 2.070      ;
+; -1.124 ; inst11~_emulated ; inst12~_emulated ; CLOCK        ; CLOCK       ; 1.000        ; -0.064     ; 2.055      ;
+; -0.961 ; ALOAD            ; inst12~_emulated ; ALOAD        ; CLOCK       ; 1.000        ; 1.995      ; 3.931      ;
+; -0.899 ; ALOAD            ; inst11~_emulated ; ALOAD        ; CLOCK       ; 1.000        ; 1.995      ; 3.869      ;
+; -0.885 ; ALOAD            ; inst10~_emulated ; ALOAD        ; CLOCK       ; 1.000        ; 1.995      ; 3.855      ;
+; -0.884 ; ALOAD            ; inst1~_emulated  ; ALOAD        ; CLOCK       ; 1.000        ; 1.995      ; 3.854      ;
+; -0.792 ; ALOAD            ; inst2~_emulated  ; ALOAD        ; CLOCK       ; 1.000        ; 1.995      ; 3.762      ;
+; -0.608 ; inst12~1         ; inst12~_emulated ; ALOAD        ; CLOCK       ; 0.500        ; -0.212     ; 0.871      ;
+; -0.469 ; inst1~1          ; inst1~_emulated  ; ALOAD        ; CLOCK       ; 0.500        ; -0.213     ; 0.731      ;
+; -0.461 ; inst2~1          ; inst2~_emulated  ; ALOAD        ; CLOCK       ; 0.500        ; -0.212     ; 0.724      ;
+; -0.440 ; inst11~1         ; inst11~_emulated ; ALOAD        ; CLOCK       ; 0.500        ; -0.211     ; 0.704      ;
+; -0.175 ; inst10~1         ; inst10~_emulated ; ALOAD        ; CLOCK       ; 0.500        ; -0.213     ; 0.437      ;
++--------+------------------+------------------+--------------+-------------+--------------+------------+------------+
 
 
-+-----------------------------------------------------------------------------------------------------------------+
-; Slow 1200mV 85C Model Hold: 'CLOCK'                                                                             ;
-+-------+-----------------+-----------------+--------------+-------------+--------------+------------+------------+
-; Slack ; From Node       ; To Node         ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
-+-------+-----------------+-----------------+--------------+-------------+--------------+------------+------------+
-; 0.842 ; inst4~1         ; inst4~_emulated ; ALOAD        ; CLOCK       ; -0.500       ; -0.068     ; 0.471      ;
-; 0.875 ; inst3~1         ; inst3~_emulated ; ALOAD        ; CLOCK       ; -0.500       ; -0.069     ; 0.503      ;
-; 0.918 ; inst1~1         ; inst1~_emulated ; ALOAD        ; CLOCK       ; -0.500       ; -0.070     ; 0.545      ;
-; 0.984 ; inst~1          ; inst~_emulated  ; ALOAD        ; CLOCK       ; -0.500       ; -0.070     ; 0.611      ;
-; 1.081 ; inst2~1         ; inst2~_emulated ; ALOAD        ; CLOCK       ; -0.500       ; -0.042     ; 0.736      ;
-; 1.111 ; ALOAD           ; inst~_emulated  ; ALOAD        ; CLOCK       ; 0.000        ; 2.071      ; 3.379      ;
-; 1.115 ; ALOAD           ; inst3~_emulated ; ALOAD        ; CLOCK       ; 0.000        ; 2.071      ; 3.383      ;
-; 1.164 ; ALOAD           ; inst4~_emulated ; ALOAD        ; CLOCK       ; 0.000        ; 2.071      ; 3.432      ;
-; 1.167 ; ALOAD           ; inst1~_emulated ; ALOAD        ; CLOCK       ; 0.000        ; 2.071      ; 3.435      ;
-; 1.209 ; ALOAD           ; inst2~_emulated ; ALOAD        ; CLOCK       ; 0.000        ; 2.071      ; 3.477      ;
-; 1.795 ; ALOAD           ; inst3~_emulated ; ALOAD        ; CLOCK       ; -0.500       ; 2.071      ; 3.563      ;
-; 1.800 ; ALOAD           ; inst~_emulated  ; ALOAD        ; CLOCK       ; -0.500       ; 2.071      ; 3.568      ;
-; 1.837 ; ALOAD           ; inst4~_emulated ; ALOAD        ; CLOCK       ; -0.500       ; 2.071      ; 3.605      ;
-; 1.847 ; ALOAD           ; inst1~_emulated ; ALOAD        ; CLOCK       ; -0.500       ; 2.071      ; 3.615      ;
-; 1.861 ; inst2~_emulated ; inst3~_emulated ; CLOCK        ; CLOCK       ; 0.000        ; 0.064      ; 2.082      ;
-; 1.888 ; ALOAD           ; inst2~_emulated ; ALOAD        ; CLOCK       ; -0.500       ; 2.071      ; 3.656      ;
-; 1.891 ; inst2~_emulated ; inst~_emulated  ; CLOCK        ; CLOCK       ; 0.000        ; 0.064      ; 2.112      ;
-; 1.898 ; inst3~_emulated ; inst4~_emulated ; CLOCK        ; CLOCK       ; 0.000        ; 0.064      ; 2.119      ;
-; 1.912 ; inst3~_emulated ; inst~_emulated  ; CLOCK        ; CLOCK       ; 0.000        ; 0.064      ; 2.133      ;
-; 1.922 ; inst~_emulated  ; inst1~_emulated ; CLOCK        ; CLOCK       ; 0.000        ; 0.064      ; 2.143      ;
-; 1.960 ; inst1~_emulated ; inst2~_emulated ; CLOCK        ; CLOCK       ; 0.000        ; 0.064      ; 2.181      ;
-; 2.024 ; inst~_emulated  ; inst~_emulated  ; CLOCK        ; CLOCK       ; 0.000        ; 0.064      ; 2.245      ;
-; 2.066 ; inst4~_emulated ; inst~_emulated  ; CLOCK        ; CLOCK       ; 0.000        ; 0.064      ; 2.287      ;
-; 2.067 ; inst1~_emulated ; inst~_emulated  ; CLOCK        ; CLOCK       ; 0.000        ; 0.064      ; 2.288      ;
-; 2.388 ; inst3~1         ; inst4~_emulated ; ALOAD        ; CLOCK       ; -0.500       ; -0.069     ; 2.016      ;
-; 2.402 ; inst3~1         ; inst~_emulated  ; ALOAD        ; CLOCK       ; -0.500       ; -0.069     ; 2.030      ;
-; 2.412 ; inst~1          ; inst1~_emulated ; ALOAD        ; CLOCK       ; -0.500       ; -0.070     ; 2.039      ;
-; 2.437 ; inst1~1         ; inst2~_emulated ; ALOAD        ; CLOCK       ; -0.500       ; -0.070     ; 2.064      ;
-; 2.494 ; inst2~1         ; inst3~_emulated ; ALOAD        ; CLOCK       ; -0.500       ; -0.042     ; 2.149      ;
-; 2.525 ; inst2~1         ; inst~_emulated  ; ALOAD        ; CLOCK       ; -0.500       ; -0.042     ; 2.180      ;
-; 2.540 ; inst4~1         ; inst~_emulated  ; ALOAD        ; CLOCK       ; -0.500       ; -0.068     ; 2.169      ;
-; 2.544 ; inst1~1         ; inst~_emulated  ; ALOAD        ; CLOCK       ; -0.500       ; -0.070     ; 2.171      ;
-+-------+-----------------+-----------------+--------------+-------------+--------------+------------+------------+
-
-
-+-----------------------------------------------------------------------------------------------------------+
-; Slow 1200mV 85C Model Recovery: 'CLOCK'                                                                   ;
-+-------+-----------+-----------------+--------------+-------------+--------------+------------+------------+
-; Slack ; From Node ; To Node         ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
-+-------+-----------+-----------------+--------------+-------------+--------------+------------+------------+
-; 0.068 ; ALOAD     ; inst4~_emulated ; ALOAD        ; CLOCK       ; 0.500        ; 1.995      ; 2.402      ;
-; 0.068 ; ALOAD     ; inst~_emulated  ; ALOAD        ; CLOCK       ; 0.500        ; 1.995      ; 2.402      ;
-; 0.068 ; ALOAD     ; inst1~_emulated ; ALOAD        ; CLOCK       ; 0.500        ; 1.995      ; 2.402      ;
-; 0.068 ; ALOAD     ; inst2~_emulated ; ALOAD        ; CLOCK       ; 0.500        ; 1.995      ; 2.402      ;
-; 0.068 ; ALOAD     ; inst3~_emulated ; ALOAD        ; CLOCK       ; 0.500        ; 1.995      ; 2.402      ;
-; 0.749 ; ALOAD     ; inst4~_emulated ; ALOAD        ; CLOCK       ; 1.000        ; 1.995      ; 2.221      ;
-; 0.749 ; ALOAD     ; inst~_emulated  ; ALOAD        ; CLOCK       ; 1.000        ; 1.995      ; 2.221      ;
-; 0.749 ; ALOAD     ; inst1~_emulated ; ALOAD        ; CLOCK       ; 1.000        ; 1.995      ; 2.221      ;
-; 0.749 ; ALOAD     ; inst2~_emulated ; ALOAD        ; CLOCK       ; 1.000        ; 1.995      ; 2.221      ;
-; 0.749 ; ALOAD     ; inst3~_emulated ; ALOAD        ; CLOCK       ; 1.000        ; 1.995      ; 2.221      ;
-+-------+-----------+-----------------+--------------+-------------+--------------+------------+------------+
++-------------------------------------------------------------------------------------------------------------------+
+; Slow 1200mV 85C Model Hold: 'CLOCK'                                                                               ;
++-------+------------------+------------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node        ; To Node          ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+------------------+------------------+--------------+-------------+--------------+------------+------------+
+; 0.761 ; inst10~1         ; inst10~_emulated ; ALOAD        ; CLOCK       ; -0.500       ; -0.079     ; 0.379      ;
+; 0.952 ; inst2~1          ; inst2~_emulated  ; ALOAD        ; CLOCK       ; -0.500       ; -0.078     ; 0.571      ;
+; 0.994 ; inst11~1         ; inst11~_emulated ; ALOAD        ; CLOCK       ; -0.500       ; -0.077     ; 0.614      ;
+; 1.029 ; inst1~1          ; inst1~_emulated  ; ALOAD        ; CLOCK       ; -0.500       ; -0.079     ; 0.647      ;
+; 1.089 ; inst12~1         ; inst12~_emulated ; ALOAD        ; CLOCK       ; -0.500       ; -0.078     ; 0.708      ;
+; 1.250 ; ALOAD            ; inst2~_emulated  ; ALOAD        ; CLOCK       ; 0.000        ; 2.071      ; 3.518      ;
+; 1.255 ; ALOAD            ; inst12~_emulated ; ALOAD        ; CLOCK       ; 0.000        ; 2.071      ; 3.523      ;
+; 1.283 ; ALOAD            ; inst11~_emulated ; ALOAD        ; CLOCK       ; 0.000        ; 2.071      ; 3.551      ;
+; 1.345 ; ALOAD            ; inst1~_emulated  ; ALOAD        ; CLOCK       ; 0.000        ; 2.071      ; 3.613      ;
+; 1.364 ; ALOAD            ; inst10~_emulated ; ALOAD        ; CLOCK       ; 0.000        ; 2.071      ; 3.632      ;
+; 1.628 ; inst12~_emulated ; inst11~_emulated ; CLOCK        ; CLOCK       ; 0.000        ; 0.064      ; 1.849      ;
+; 1.637 ; inst1~_emulated  ; inst2~_emulated  ; CLOCK        ; CLOCK       ; 0.000        ; 0.064      ; 1.858      ;
+; 1.650 ; inst11~_emulated ; inst12~_emulated ; CLOCK        ; CLOCK       ; 0.000        ; 0.064      ; 1.871      ;
+; 1.692 ; inst10~_emulated ; inst1~_emulated  ; CLOCK        ; CLOCK       ; 0.000        ; 0.064      ; 1.913      ;
+; 1.718 ; inst10~_emulated ; inst12~_emulated ; CLOCK        ; CLOCK       ; 0.000        ; 0.064      ; 1.939      ;
+; 1.725 ; inst11~_emulated ; inst10~_emulated ; CLOCK        ; CLOCK       ; 0.000        ; 0.064      ; 1.946      ;
+; 1.790 ; inst2~_emulated  ; inst12~_emulated ; CLOCK        ; CLOCK       ; 0.000        ; 0.064      ; 2.011      ;
+; 1.905 ; inst12~1         ; inst11~_emulated ; ALOAD        ; CLOCK       ; -0.500       ; -0.078     ; 1.524      ;
+; 1.914 ; ALOAD            ; inst2~_emulated  ; ALOAD        ; CLOCK       ; -0.500       ; 2.071      ; 3.682      ;
+; 1.916 ; inst1~1          ; inst2~_emulated  ; ALOAD        ; CLOCK       ; -0.500       ; -0.079     ; 1.534      ;
+; 1.921 ; ALOAD            ; inst12~_emulated ; ALOAD        ; CLOCK       ; -0.500       ; 2.071      ; 3.689      ;
+; 1.927 ; inst11~1         ; inst12~_emulated ; ALOAD        ; CLOCK       ; -0.500       ; -0.077     ; 1.547      ;
+; 1.963 ; inst2~1          ; inst12~_emulated ; ALOAD        ; CLOCK       ; -0.500       ; -0.078     ; 1.582      ;
+; 1.964 ; ALOAD            ; inst11~_emulated ; ALOAD        ; CLOCK       ; -0.500       ; 2.071      ; 3.732      ;
+; 1.980 ; inst10~1         ; inst1~_emulated  ; ALOAD        ; CLOCK       ; -0.500       ; -0.079     ; 1.598      ;
+; 2.002 ; inst11~1         ; inst10~_emulated ; ALOAD        ; CLOCK       ; -0.500       ; -0.077     ; 1.622      ;
+; 2.006 ; inst10~1         ; inst12~_emulated ; ALOAD        ; CLOCK       ; -0.500       ; -0.079     ; 1.624      ;
+; 2.018 ; ALOAD            ; inst10~_emulated ; ALOAD        ; CLOCK       ; -0.500       ; 2.071      ; 3.786      ;
+; 2.025 ; ALOAD            ; inst1~_emulated  ; ALOAD        ; CLOCK       ; -0.500       ; 2.071      ; 3.793      ;
++-------+------------------+------------------+--------------+-------------+--------------+------------+------------+
 
 
 +------------------------------------------------------------------------------------------------------------+
-; Slow 1200mV 85C Model Removal: 'CLOCK'                                                                     ;
-+--------+-----------+-----------------+--------------+-------------+--------------+------------+------------+
-; Slack  ; From Node ; To Node         ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
-+--------+-----------+-----------------+--------------+-------------+--------------+------------+------------+
-; -0.118 ; ALOAD     ; inst4~_emulated ; ALOAD        ; CLOCK       ; 0.000        ; 2.071      ; 2.150      ;
-; -0.118 ; ALOAD     ; inst~_emulated  ; ALOAD        ; CLOCK       ; 0.000        ; 2.071      ; 2.150      ;
-; -0.118 ; ALOAD     ; inst1~_emulated ; ALOAD        ; CLOCK       ; 0.000        ; 2.071      ; 2.150      ;
-; -0.118 ; ALOAD     ; inst2~_emulated ; ALOAD        ; CLOCK       ; 0.000        ; 2.071      ; 2.150      ;
-; -0.118 ; ALOAD     ; inst3~_emulated ; ALOAD        ; CLOCK       ; 0.000        ; 2.071      ; 2.150      ;
-; 0.558  ; ALOAD     ; inst4~_emulated ; ALOAD        ; CLOCK       ; -0.500       ; 2.071      ; 2.326      ;
-; 0.558  ; ALOAD     ; inst~_emulated  ; ALOAD        ; CLOCK       ; -0.500       ; 2.071      ; 2.326      ;
-; 0.558  ; ALOAD     ; inst1~_emulated ; ALOAD        ; CLOCK       ; -0.500       ; 2.071      ; 2.326      ;
-; 0.558  ; ALOAD     ; inst2~_emulated ; ALOAD        ; CLOCK       ; -0.500       ; 2.071      ; 2.326      ;
-; 0.558  ; ALOAD     ; inst3~_emulated ; ALOAD        ; CLOCK       ; -0.500       ; 2.071      ; 2.326      ;
-+--------+-----------+-----------------+--------------+-------------+--------------+------------+------------+
+; Slow 1200mV 85C Model Recovery: 'CLOCK'                                                                    ;
++-------+-----------+------------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node ; To Node          ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+-----------+------------------+--------------+-------------+--------------+------------+------------+
+; 0.068 ; ALOAD     ; inst10~_emulated ; ALOAD        ; CLOCK       ; 0.500        ; 1.995      ; 2.402      ;
+; 0.068 ; ALOAD     ; inst1~_emulated  ; ALOAD        ; CLOCK       ; 0.500        ; 1.995      ; 2.402      ;
+; 0.068 ; ALOAD     ; inst2~_emulated  ; ALOAD        ; CLOCK       ; 0.500        ; 1.995      ; 2.402      ;
+; 0.068 ; ALOAD     ; inst12~_emulated ; ALOAD        ; CLOCK       ; 0.500        ; 1.995      ; 2.402      ;
+; 0.068 ; ALOAD     ; inst11~_emulated ; ALOAD        ; CLOCK       ; 0.500        ; 1.995      ; 2.402      ;
+; 0.749 ; ALOAD     ; inst10~_emulated ; ALOAD        ; CLOCK       ; 1.000        ; 1.995      ; 2.221      ;
+; 0.749 ; ALOAD     ; inst1~_emulated  ; ALOAD        ; CLOCK       ; 1.000        ; 1.995      ; 2.221      ;
+; 0.749 ; ALOAD     ; inst2~_emulated  ; ALOAD        ; CLOCK       ; 1.000        ; 1.995      ; 2.221      ;
+; 0.749 ; ALOAD     ; inst12~_emulated ; ALOAD        ; CLOCK       ; 1.000        ; 1.995      ; 2.221      ;
+; 0.749 ; ALOAD     ; inst11~_emulated ; ALOAD        ; CLOCK       ; 1.000        ; 1.995      ; 2.221      ;
++-------+-----------+------------------+--------------+-------------+--------------+------------+------------+
+
+
++-------------------------------------------------------------------------------------------------------------+
+; Slow 1200mV 85C Model Removal: 'CLOCK'                                                                      ;
++--------+-----------+------------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node ; To Node          ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+-----------+------------------+--------------+-------------+--------------+------------+------------+
+; -0.118 ; ALOAD     ; inst10~_emulated ; ALOAD        ; CLOCK       ; 0.000        ; 2.071      ; 2.150      ;
+; -0.118 ; ALOAD     ; inst1~_emulated  ; ALOAD        ; CLOCK       ; 0.000        ; 2.071      ; 2.150      ;
+; -0.118 ; ALOAD     ; inst2~_emulated  ; ALOAD        ; CLOCK       ; 0.000        ; 2.071      ; 2.150      ;
+; -0.118 ; ALOAD     ; inst12~_emulated ; ALOAD        ; CLOCK       ; 0.000        ; 2.071      ; 2.150      ;
+; -0.118 ; ALOAD     ; inst11~_emulated ; ALOAD        ; CLOCK       ; 0.000        ; 2.071      ; 2.150      ;
+; 0.558  ; ALOAD     ; inst10~_emulated ; ALOAD        ; CLOCK       ; -0.500       ; 2.071      ; 2.326      ;
+; 0.558  ; ALOAD     ; inst1~_emulated  ; ALOAD        ; CLOCK       ; -0.500       ; 2.071      ; 2.326      ;
+; 0.558  ; ALOAD     ; inst2~_emulated  ; ALOAD        ; CLOCK       ; -0.500       ; 2.071      ; 2.326      ;
+; 0.558  ; ALOAD     ; inst12~_emulated ; ALOAD        ; CLOCK       ; -0.500       ; 2.071      ; 2.326      ;
+; 0.558  ; ALOAD     ; inst11~_emulated ; ALOAD        ; CLOCK       ; -0.500       ; 2.071      ; 2.326      ;
++--------+-----------+------------------+--------------+-------------+--------------+------------+------------+
 
 
 -----------------------------------------------
@@ -316,7 +310,7 @@ No synchronizer chains to report.
 +------------+-----------------+------------+---------------------------------------------------------------+
 ; Fmax       ; Restricted Fmax ; Clock Name ; Note                                                          ;
 +------------+-----------------+------------+---------------------------------------------------------------+
-; 411.69 MHz ; 250.0 MHz       ; CLOCK      ; limit due to minimum period restriction (max I/O toggle rate) ;
+; 475.06 MHz ; 250.0 MHz       ; CLOCK      ; limit due to minimum period restriction (max I/O toggle rate) ;
 +------------+-----------------+------------+---------------------------------------------------------------+
 This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
 
@@ -326,7 +320,7 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +-------+--------+-------------------+
 ; Clock ; Slack  ; End Point TNS     ;
 +-------+--------+-------------------+
-; CLOCK ; -1.922 ; -8.778            ;
+; CLOCK ; -1.481 ; -7.066            ;
 +-------+--------+-------------------+
 
 
@@ -335,7 +329,7 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +-------+-------+-------------------+
 ; Clock ; Slack ; End Point TNS     ;
 +-------+-------+-------------------+
-; CLOCK ; 0.774 ; 0.000             ;
+; CLOCK ; 0.705 ; 0.000             ;
 +-------+-------+-------------------+
 
 
@@ -367,120 +361,114 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +-------+--------+---------------------------------+
 
 
-+------------------------------------------------------------------------------------------------------------------+
-; Slow 1200mV 0C Model Setup: 'CLOCK'                                                                              ;
-+--------+-----------------+-----------------+--------------+-------------+--------------+------------+------------+
-; Slack  ; From Node       ; To Node         ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
-+--------+-----------------+-----------------+--------------+-------------+--------------+------------+------------+
-; -1.922 ; inst1~1         ; inst~_emulated  ; ALOAD        ; CLOCK       ; 0.500        ; -0.159     ; 2.238      ;
-; -1.917 ; inst4~1         ; inst~_emulated  ; ALOAD        ; CLOCK       ; 0.500        ; -0.157     ; 2.235      ;
-; -1.858 ; inst2~1         ; inst~_emulated  ; ALOAD        ; CLOCK       ; 0.500        ; -0.134     ; 2.199      ;
-; -1.843 ; inst~1          ; inst~_emulated  ; ALOAD        ; CLOCK       ; 0.500        ; -0.159     ; 2.159      ;
-; -1.793 ; inst2~1         ; inst3~_emulated ; ALOAD        ; CLOCK       ; 0.500        ; -0.134     ; 2.134      ;
-; -1.785 ; inst3~1         ; inst~_emulated  ; ALOAD        ; CLOCK       ; 0.500        ; -0.158     ; 2.102      ;
-; -1.706 ; inst1~1         ; inst2~_emulated ; ALOAD        ; CLOCK       ; 0.500        ; -0.159     ; 2.022      ;
-; -1.684 ; inst~1          ; inst1~_emulated ; ALOAD        ; CLOCK       ; 0.500        ; -0.159     ; 2.000      ;
-; -1.673 ; inst3~1         ; inst4~_emulated ; ALOAD        ; CLOCK       ; 0.500        ; -0.158     ; 1.990      ;
-; -1.495 ; ALOAD           ; inst~_emulated  ; ALOAD        ; CLOCK       ; 0.500        ; 1.814      ; 3.784      ;
-; -1.429 ; inst4~_emulated ; inst~_emulated  ; CLOCK        ; CLOCK       ; 1.000        ; -0.057     ; 2.367      ;
-; -1.417 ; inst1~_emulated ; inst~_emulated  ; CLOCK        ; CLOCK       ; 1.000        ; -0.057     ; 2.355      ;
-; -1.354 ; inst~_emulated  ; inst~_emulated  ; CLOCK        ; CLOCK       ; 1.000        ; -0.057     ; 2.292      ;
-; -1.295 ; inst3~_emulated ; inst~_emulated  ; CLOCK        ; CLOCK       ; 1.000        ; -0.057     ; 2.233      ;
-; -1.279 ; ALOAD           ; inst2~_emulated ; ALOAD        ; CLOCK       ; 0.500        ; 1.814      ; 3.568      ;
-; -1.244 ; ALOAD           ; inst1~_emulated ; ALOAD        ; CLOCK       ; 0.500        ; 1.814      ; 3.533      ;
-; -1.236 ; inst2~_emulated ; inst~_emulated  ; CLOCK        ; CLOCK       ; 1.000        ; -0.057     ; 2.174      ;
-; -1.226 ; ALOAD           ; inst4~_emulated ; ALOAD        ; CLOCK       ; 0.500        ; 1.814      ; 3.515      ;
-; -1.211 ; ALOAD           ; inst3~_emulated ; ALOAD        ; CLOCK       ; 0.500        ; 1.814      ; 3.500      ;
-; -1.210 ; inst1~_emulated ; inst2~_emulated ; CLOCK        ; CLOCK       ; 1.000        ; -0.057     ; 2.148      ;
-; -1.183 ; inst3~_emulated ; inst4~_emulated ; CLOCK        ; CLOCK       ; 1.000        ; -0.057     ; 2.121      ;
-; -1.174 ; inst~_emulated  ; inst1~_emulated ; CLOCK        ; CLOCK       ; 1.000        ; -0.057     ; 2.112      ;
-; -1.171 ; inst2~_emulated ; inst3~_emulated ; CLOCK        ; CLOCK       ; 1.000        ; -0.057     ; 2.109      ;
-; -0.792 ; ALOAD           ; inst~_emulated  ; ALOAD        ; CLOCK       ; 1.000        ; 1.814      ; 3.581      ;
-; -0.576 ; ALOAD           ; inst2~_emulated ; ALOAD        ; CLOCK       ; 1.000        ; 1.814      ; 3.365      ;
-; -0.544 ; ALOAD           ; inst4~_emulated ; ALOAD        ; CLOCK       ; 1.000        ; 1.814      ; 3.333      ;
-; -0.543 ; ALOAD           ; inst1~_emulated ; ALOAD        ; CLOCK       ; 1.000        ; 1.814      ; 3.332      ;
-; -0.528 ; ALOAD           ; inst3~_emulated ; ALOAD        ; CLOCK       ; 1.000        ; 1.814      ; 3.317      ;
-; -0.456 ; inst2~1         ; inst2~_emulated ; ALOAD        ; CLOCK       ; 0.500        ; -0.134     ; 0.797      ;
-; -0.324 ; inst1~1         ; inst1~_emulated ; ALOAD        ; CLOCK       ; 0.500        ; -0.159     ; 0.640      ;
-; -0.188 ; inst3~1         ; inst3~_emulated ; ALOAD        ; CLOCK       ; 0.500        ; -0.158     ; 0.505      ;
-; -0.181 ; inst4~1         ; inst4~_emulated ; ALOAD        ; CLOCK       ; 0.500        ; -0.157     ; 0.499      ;
-+--------+-----------------+-----------------+--------------+-------------+--------------+------------+------------+
++--------------------------------------------------------------------------------------------------------------------+
+; Slow 1200mV 0C Model Setup: 'CLOCK'                                                                                ;
++--------+------------------+------------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node        ; To Node          ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+------------------+------------------+--------------+-------------+--------------+------------+------------+
+; -1.481 ; ALOAD            ; inst12~_emulated ; ALOAD        ; CLOCK       ; 0.500        ; 1.814      ; 3.770      ;
+; -1.444 ; ALOAD            ; inst11~_emulated ; ALOAD        ; CLOCK       ; 0.500        ; 1.814      ; 3.733      ;
+; -1.421 ; ALOAD            ; inst10~_emulated ; ALOAD        ; CLOCK       ; 0.500        ; 1.814      ; 3.710      ;
+; -1.409 ; ALOAD            ; inst1~_emulated  ; ALOAD        ; CLOCK       ; 0.500        ; 1.814      ; 3.698      ;
+; -1.370 ; inst10~1         ; inst12~_emulated ; ALOAD        ; CLOCK       ; 0.500        ; -0.168     ; 1.677      ;
+; -1.340 ; inst11~1         ; inst10~_emulated ; ALOAD        ; CLOCK       ; 0.500        ; -0.165     ; 1.650      ;
+; -1.311 ; ALOAD            ; inst2~_emulated  ; ALOAD        ; CLOCK       ; 0.500        ; 1.814      ; 3.600      ;
+; -1.269 ; inst12~1         ; inst11~_emulated ; ALOAD        ; CLOCK       ; 0.500        ; -0.167     ; 1.577      ;
+; -1.267 ; inst2~1          ; inst12~_emulated ; ALOAD        ; CLOCK       ; 0.500        ; -0.167     ; 1.575      ;
+; -1.266 ; inst10~1         ; inst1~_emulated  ; ALOAD        ; CLOCK       ; 0.500        ; -0.168     ; 1.573      ;
+; -1.253 ; inst11~1         ; inst12~_emulated ; ALOAD        ; CLOCK       ; 0.500        ; -0.165     ; 1.563      ;
+; -1.209 ; inst1~1          ; inst2~_emulated  ; ALOAD        ; CLOCK       ; 0.500        ; -0.168     ; 1.516      ;
+; -1.105 ; inst2~_emulated  ; inst12~_emulated ; CLOCK        ; CLOCK       ; 1.000        ; -0.057     ; 2.043      ;
+; -1.048 ; inst10~_emulated ; inst12~_emulated ; CLOCK        ; CLOCK       ; 1.000        ; -0.057     ; 1.986      ;
+; -1.037 ; inst11~_emulated ; inst10~_emulated ; CLOCK        ; CLOCK       ; 1.000        ; -0.057     ; 1.975      ;
+; -0.998 ; inst12~_emulated ; inst11~_emulated ; CLOCK        ; CLOCK       ; 1.000        ; -0.057     ; 1.936      ;
+; -0.967 ; inst10~_emulated ; inst1~_emulated  ; CLOCK        ; CLOCK       ; 1.000        ; -0.057     ; 1.905      ;
+; -0.950 ; inst11~_emulated ; inst12~_emulated ; CLOCK        ; CLOCK       ; 1.000        ; -0.057     ; 1.888      ;
+; -0.919 ; inst1~_emulated  ; inst2~_emulated  ; CLOCK        ; CLOCK       ; 1.000        ; -0.057     ; 1.857      ;
+; -0.809 ; ALOAD            ; inst12~_emulated ; ALOAD        ; CLOCK       ; 1.000        ; 1.814      ; 3.598      ;
+; -0.758 ; ALOAD            ; inst10~_emulated ; ALOAD        ; CLOCK       ; 1.000        ; 1.814      ; 3.547      ;
+; -0.750 ; ALOAD            ; inst11~_emulated ; ALOAD        ; CLOCK       ; 1.000        ; 1.814      ; 3.539      ;
+; -0.717 ; ALOAD            ; inst1~_emulated  ; ALOAD        ; CLOCK       ; 1.000        ; 1.814      ; 3.506      ;
+; -0.631 ; ALOAD            ; inst2~_emulated  ; ALOAD        ; CLOCK       ; 1.000        ; 1.814      ; 3.420      ;
+; -0.459 ; inst12~1         ; inst12~_emulated ; ALOAD        ; CLOCK       ; 0.500        ; -0.167     ; 0.767      ;
+; -0.342 ; inst1~1          ; inst1~_emulated  ; ALOAD        ; CLOCK       ; 0.500        ; -0.168     ; 0.649      ;
+; -0.333 ; inst2~1          ; inst2~_emulated  ; ALOAD        ; CLOCK       ; 0.500        ; -0.167     ; 0.641      ;
+; -0.317 ; inst11~1         ; inst11~_emulated ; ALOAD        ; CLOCK       ; 0.500        ; -0.165     ; 0.627      ;
+; -0.088 ; inst10~1         ; inst10~_emulated ; ALOAD        ; CLOCK       ; 0.500        ; -0.168     ; 0.395      ;
++--------+------------------+------------------+--------------+-------------+--------------+------------+------------+
 
 
-+-----------------------------------------------------------------------------------------------------------------+
-; Slow 1200mV 0C Model Hold: 'CLOCK'                                                                              ;
-+-------+-----------------+-----------------+--------------+-------------+--------------+------------+------------+
-; Slack ; From Node       ; To Node         ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
-+-------+-----------------+-----------------+--------------+-------------+--------------+------------+------------+
-; 0.774 ; inst4~1         ; inst4~_emulated ; ALOAD        ; CLOCK       ; -0.500       ; -0.041     ; 0.417      ;
-; 0.811 ; inst3~1         ; inst3~_emulated ; ALOAD        ; CLOCK       ; -0.500       ; -0.042     ; 0.453      ;
-; 0.847 ; inst1~1         ; inst1~_emulated ; ALOAD        ; CLOCK       ; -0.500       ; -0.043     ; 0.488      ;
-; 0.910 ; inst~1          ; inst~_emulated  ; ALOAD        ; CLOCK       ; -0.500       ; -0.043     ; 0.551      ;
-; 0.983 ; ALOAD           ; inst~_emulated  ; ALOAD        ; CLOCK       ; 0.000        ; 1.881      ; 3.048      ;
-; 1.010 ; inst2~1         ; inst2~_emulated ; ALOAD        ; CLOCK       ; -0.500       ; -0.019     ; 0.675      ;
-; 1.012 ; ALOAD           ; inst3~_emulated ; ALOAD        ; CLOCK       ; 0.000        ; 1.881      ; 3.077      ;
-; 1.044 ; ALOAD           ; inst4~_emulated ; ALOAD        ; CLOCK       ; 0.000        ; 1.881      ; 3.109      ;
-; 1.080 ; ALOAD           ; inst1~_emulated ; ALOAD        ; CLOCK       ; 0.000        ; 1.881      ; 3.145      ;
-; 1.117 ; ALOAD           ; inst2~_emulated ; ALOAD        ; CLOCK       ; 0.000        ; 1.881      ; 3.182      ;
-; 1.665 ; inst2~_emulated ; inst3~_emulated ; CLOCK        ; CLOCK       ; 0.000        ; 0.057      ; 1.866      ;
-; 1.676 ; ALOAD           ; inst~_emulated  ; ALOAD        ; CLOCK       ; -0.500       ; 1.881      ; 3.241      ;
-; 1.692 ; ALOAD           ; inst3~_emulated ; ALOAD        ; CLOCK       ; -0.500       ; 1.881      ; 3.257      ;
-; 1.693 ; inst3~_emulated ; inst4~_emulated ; CLOCK        ; CLOCK       ; 0.000        ; 0.057      ; 1.894      ;
-; 1.697 ; inst3~_emulated ; inst~_emulated  ; CLOCK        ; CLOCK       ; 0.000        ; 0.057      ; 1.898      ;
-; 1.711 ; inst2~_emulated ; inst~_emulated  ; CLOCK        ; CLOCK       ; 0.000        ; 0.057      ; 1.912      ;
-; 1.723 ; ALOAD           ; inst4~_emulated ; ALOAD        ; CLOCK       ; -0.500       ; 1.881      ; 3.288      ;
-; 1.739 ; inst~_emulated  ; inst1~_emulated ; CLOCK        ; CLOCK       ; 0.000        ; 0.057      ; 1.940      ;
-; 1.766 ; ALOAD           ; inst1~_emulated ; ALOAD        ; CLOCK       ; -0.500       ; 1.881      ; 3.331      ;
-; 1.767 ; inst1~_emulated ; inst2~_emulated ; CLOCK        ; CLOCK       ; 0.000        ; 0.057      ; 1.968      ;
-; 1.799 ; ALOAD           ; inst2~_emulated ; ALOAD        ; CLOCK       ; -0.500       ; 1.881      ; 3.364      ;
-; 1.802 ; inst~_emulated  ; inst~_emulated  ; CLOCK        ; CLOCK       ; 0.000        ; 0.057      ; 2.003      ;
-; 1.835 ; inst4~_emulated ; inst~_emulated  ; CLOCK        ; CLOCK       ; 0.000        ; 0.057      ; 2.036      ;
-; 1.840 ; inst1~_emulated ; inst~_emulated  ; CLOCK        ; CLOCK       ; 0.000        ; 0.057      ; 2.041      ;
-; 2.154 ; inst3~1         ; inst4~_emulated ; ALOAD        ; CLOCK       ; -0.500       ; -0.042     ; 1.796      ;
-; 2.158 ; inst3~1         ; inst~_emulated  ; ALOAD        ; CLOCK       ; -0.500       ; -0.042     ; 1.800      ;
-; 2.199 ; inst~1          ; inst1~_emulated ; ALOAD        ; CLOCK       ; -0.500       ; -0.043     ; 1.840      ;
-; 2.217 ; inst1~1         ; inst2~_emulated ; ALOAD        ; CLOCK       ; -0.500       ; -0.043     ; 1.858      ;
-; 2.267 ; inst2~1         ; inst3~_emulated ; ALOAD        ; CLOCK       ; -0.500       ; -0.019     ; 1.932      ;
-; 2.282 ; inst4~1         ; inst~_emulated  ; ALOAD        ; CLOCK       ; -0.500       ; -0.041     ; 1.925      ;
-; 2.290 ; inst1~1         ; inst~_emulated  ; ALOAD        ; CLOCK       ; -0.500       ; -0.043     ; 1.931      ;
-; 2.313 ; inst2~1         ; inst~_emulated  ; ALOAD        ; CLOCK       ; -0.500       ; -0.019     ; 1.978      ;
-+-------+-----------------+-----------------+--------------+-------------+--------------+------------+------------+
-
-
-+-----------------------------------------------------------------------------------------------------------+
-; Slow 1200mV 0C Model Recovery: 'CLOCK'                                                                    ;
-+-------+-----------+-----------------+--------------+-------------+--------------+------------+------------+
-; Slack ; From Node ; To Node         ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
-+-------+-----------+-----------------+--------------+-------------+--------------+------------+------------+
-; 0.121 ; ALOAD     ; inst4~_emulated ; ALOAD        ; CLOCK       ; 0.500        ; 1.814      ; 2.168      ;
-; 0.121 ; ALOAD     ; inst~_emulated  ; ALOAD        ; CLOCK       ; 0.500        ; 1.814      ; 2.168      ;
-; 0.121 ; ALOAD     ; inst1~_emulated ; ALOAD        ; CLOCK       ; 0.500        ; 1.814      ; 2.168      ;
-; 0.121 ; ALOAD     ; inst2~_emulated ; ALOAD        ; CLOCK       ; 0.500        ; 1.814      ; 2.168      ;
-; 0.121 ; ALOAD     ; inst3~_emulated ; ALOAD        ; CLOCK       ; 0.500        ; 1.814      ; 2.168      ;
-; 0.780 ; ALOAD     ; inst4~_emulated ; ALOAD        ; CLOCK       ; 1.000        ; 1.814      ; 2.009      ;
-; 0.780 ; ALOAD     ; inst~_emulated  ; ALOAD        ; CLOCK       ; 1.000        ; 1.814      ; 2.009      ;
-; 0.780 ; ALOAD     ; inst1~_emulated ; ALOAD        ; CLOCK       ; 1.000        ; 1.814      ; 2.009      ;
-; 0.780 ; ALOAD     ; inst2~_emulated ; ALOAD        ; CLOCK       ; 1.000        ; 1.814      ; 2.009      ;
-; 0.780 ; ALOAD     ; inst3~_emulated ; ALOAD        ; CLOCK       ; 1.000        ; 1.814      ; 2.009      ;
-+-------+-----------+-----------------+--------------+-------------+--------------+------------+------------+
++-------------------------------------------------------------------------------------------------------------------+
+; Slow 1200mV 0C Model Hold: 'CLOCK'                                                                                ;
++-------+------------------+------------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node        ; To Node          ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+------------------+------------------+--------------+-------------+--------------+------------+------------+
+; 0.705 ; inst10~1         ; inst10~_emulated ; ALOAD        ; CLOCK       ; -0.500       ; -0.051     ; 0.338      ;
+; 0.878 ; inst2~1          ; inst2~_emulated  ; ALOAD        ; CLOCK       ; -0.500       ; -0.050     ; 0.512      ;
+; 0.926 ; inst11~1         ; inst11~_emulated ; ALOAD        ; CLOCK       ; -0.500       ; -0.049     ; 0.561      ;
+; 0.950 ; inst1~1          ; inst1~_emulated  ; ALOAD        ; CLOCK       ; -0.500       ; -0.051     ; 0.583      ;
+; 1.011 ; inst12~1         ; inst12~_emulated ; ALOAD        ; CLOCK       ; -0.500       ; -0.050     ; 0.645      ;
+; 1.147 ; ALOAD            ; inst12~_emulated ; ALOAD        ; CLOCK       ; 0.000        ; 1.881      ; 3.212      ;
+; 1.170 ; ALOAD            ; inst2~_emulated  ; ALOAD        ; CLOCK       ; 0.000        ; 1.881      ; 3.235      ;
+; 1.196 ; ALOAD            ; inst11~_emulated ; ALOAD        ; CLOCK       ; 0.000        ; 1.881      ; 3.261      ;
+; 1.228 ; ALOAD            ; inst10~_emulated ; ALOAD        ; CLOCK       ; 0.000        ; 1.881      ; 3.293      ;
+; 1.250 ; ALOAD            ; inst1~_emulated  ; ALOAD        ; CLOCK       ; 0.000        ; 1.881      ; 3.315      ;
+; 1.456 ; inst11~_emulated ; inst12~_emulated ; CLOCK        ; CLOCK       ; 0.000        ; 0.057      ; 1.657      ;
+; 1.487 ; inst1~_emulated  ; inst2~_emulated  ; CLOCK        ; CLOCK       ; 0.000        ; 0.057      ; 1.688      ;
+; 1.492 ; inst12~_emulated ; inst11~_emulated ; CLOCK        ; CLOCK       ; 0.000        ; 0.057      ; 1.693      ;
+; 1.524 ; inst10~_emulated ; inst12~_emulated ; CLOCK        ; CLOCK       ; 0.000        ; 0.057      ; 1.725      ;
+; 1.536 ; inst10~_emulated ; inst1~_emulated  ; CLOCK        ; CLOCK       ; 0.000        ; 0.057      ; 1.737      ;
+; 1.537 ; inst11~_emulated ; inst10~_emulated ; CLOCK        ; CLOCK       ; 0.000        ; 0.057      ; 1.738      ;
+; 1.613 ; inst2~_emulated  ; inst12~_emulated ; CLOCK        ; CLOCK       ; 0.000        ; 0.057      ; 1.814      ;
+; 1.732 ; inst11~1         ; inst12~_emulated ; ALOAD        ; CLOCK       ; -0.500       ; -0.049     ; 1.367      ;
+; 1.767 ; inst1~1          ; inst2~_emulated  ; ALOAD        ; CLOCK       ; -0.500       ; -0.051     ; 1.400      ;
+; 1.767 ; inst12~1         ; inst11~_emulated ; ALOAD        ; CLOCK       ; -0.500       ; -0.050     ; 1.401      ;
+; 1.790 ; inst2~1          ; inst12~_emulated ; ALOAD        ; CLOCK       ; -0.500       ; -0.050     ; 1.424      ;
+; 1.808 ; ALOAD            ; inst12~_emulated ; ALOAD        ; CLOCK       ; -0.500       ; 1.881      ; 3.373      ;
+; 1.812 ; inst10~1         ; inst12~_emulated ; ALOAD        ; CLOCK       ; -0.500       ; -0.051     ; 1.445      ;
+; 1.813 ; inst11~1         ; inst10~_emulated ; ALOAD        ; CLOCK       ; -0.500       ; -0.049     ; 1.448      ;
+; 1.824 ; inst10~1         ; inst1~_emulated  ; ALOAD        ; CLOCK       ; -0.500       ; -0.051     ; 1.457      ;
+; 1.839 ; ALOAD            ; inst2~_emulated  ; ALOAD        ; CLOCK       ; -0.500       ; 1.881      ; 3.404      ;
+; 1.878 ; ALOAD            ; inst11~_emulated ; ALOAD        ; CLOCK       ; -0.500       ; 1.881      ; 3.443      ;
+; 1.889 ; ALOAD            ; inst10~_emulated ; ALOAD        ; CLOCK       ; -0.500       ; 1.881      ; 3.454      ;
+; 1.930 ; ALOAD            ; inst1~_emulated  ; ALOAD        ; CLOCK       ; -0.500       ; 1.881      ; 3.495      ;
++-------+------------------+------------------+--------------+-------------+--------------+------------+------------+
 
 
 +------------------------------------------------------------------------------------------------------------+
-; Slow 1200mV 0C Model Removal: 'CLOCK'                                                                      ;
-+--------+-----------+-----------------+--------------+-------------+--------------+------------+------------+
-; Slack  ; From Node ; To Node         ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
-+--------+-----------+-----------------+--------------+-------------+--------------+------------+------------+
-; -0.120 ; ALOAD     ; inst4~_emulated ; ALOAD        ; CLOCK       ; 0.000        ; 1.881      ; 1.945      ;
-; -0.120 ; ALOAD     ; inst~_emulated  ; ALOAD        ; CLOCK       ; 0.000        ; 1.881      ; 1.945      ;
-; -0.120 ; ALOAD     ; inst1~_emulated ; ALOAD        ; CLOCK       ; 0.000        ; 1.881      ; 1.945      ;
-; -0.120 ; ALOAD     ; inst2~_emulated ; ALOAD        ; CLOCK       ; 0.000        ; 1.881      ; 1.945      ;
-; -0.120 ; ALOAD     ; inst3~_emulated ; ALOAD        ; CLOCK       ; 0.000        ; 1.881      ; 1.945      ;
-; 0.534  ; ALOAD     ; inst4~_emulated ; ALOAD        ; CLOCK       ; -0.500       ; 1.881      ; 2.099      ;
-; 0.534  ; ALOAD     ; inst~_emulated  ; ALOAD        ; CLOCK       ; -0.500       ; 1.881      ; 2.099      ;
-; 0.534  ; ALOAD     ; inst1~_emulated ; ALOAD        ; CLOCK       ; -0.500       ; 1.881      ; 2.099      ;
-; 0.534  ; ALOAD     ; inst2~_emulated ; ALOAD        ; CLOCK       ; -0.500       ; 1.881      ; 2.099      ;
-; 0.534  ; ALOAD     ; inst3~_emulated ; ALOAD        ; CLOCK       ; -0.500       ; 1.881      ; 2.099      ;
-+--------+-----------+-----------------+--------------+-------------+--------------+------------+------------+
+; Slow 1200mV 0C Model Recovery: 'CLOCK'                                                                     ;
++-------+-----------+------------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node ; To Node          ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+-----------+------------------+--------------+-------------+--------------+------------+------------+
+; 0.121 ; ALOAD     ; inst10~_emulated ; ALOAD        ; CLOCK       ; 0.500        ; 1.814      ; 2.168      ;
+; 0.121 ; ALOAD     ; inst1~_emulated  ; ALOAD        ; CLOCK       ; 0.500        ; 1.814      ; 2.168      ;
+; 0.121 ; ALOAD     ; inst2~_emulated  ; ALOAD        ; CLOCK       ; 0.500        ; 1.814      ; 2.168      ;
+; 0.121 ; ALOAD     ; inst12~_emulated ; ALOAD        ; CLOCK       ; 0.500        ; 1.814      ; 2.168      ;
+; 0.121 ; ALOAD     ; inst11~_emulated ; ALOAD        ; CLOCK       ; 0.500        ; 1.814      ; 2.168      ;
+; 0.780 ; ALOAD     ; inst10~_emulated ; ALOAD        ; CLOCK       ; 1.000        ; 1.814      ; 2.009      ;
+; 0.780 ; ALOAD     ; inst1~_emulated  ; ALOAD        ; CLOCK       ; 1.000        ; 1.814      ; 2.009      ;
+; 0.780 ; ALOAD     ; inst2~_emulated  ; ALOAD        ; CLOCK       ; 1.000        ; 1.814      ; 2.009      ;
+; 0.780 ; ALOAD     ; inst12~_emulated ; ALOAD        ; CLOCK       ; 1.000        ; 1.814      ; 2.009      ;
+; 0.780 ; ALOAD     ; inst11~_emulated ; ALOAD        ; CLOCK       ; 1.000        ; 1.814      ; 2.009      ;
++-------+-----------+------------------+--------------+-------------+--------------+------------+------------+
+
+
++-------------------------------------------------------------------------------------------------------------+
+; Slow 1200mV 0C Model Removal: 'CLOCK'                                                                       ;
++--------+-----------+------------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node ; To Node          ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+-----------+------------------+--------------+-------------+--------------+------------+------------+
+; -0.120 ; ALOAD     ; inst10~_emulated ; ALOAD        ; CLOCK       ; 0.000        ; 1.881      ; 1.945      ;
+; -0.120 ; ALOAD     ; inst1~_emulated  ; ALOAD        ; CLOCK       ; 0.000        ; 1.881      ; 1.945      ;
+; -0.120 ; ALOAD     ; inst2~_emulated  ; ALOAD        ; CLOCK       ; 0.000        ; 1.881      ; 1.945      ;
+; -0.120 ; ALOAD     ; inst12~_emulated ; ALOAD        ; CLOCK       ; 0.000        ; 1.881      ; 1.945      ;
+; -0.120 ; ALOAD     ; inst11~_emulated ; ALOAD        ; CLOCK       ; 0.000        ; 1.881      ; 1.945      ;
+; 0.534  ; ALOAD     ; inst10~_emulated ; ALOAD        ; CLOCK       ; -0.500       ; 1.881      ; 2.099      ;
+; 0.534  ; ALOAD     ; inst1~_emulated  ; ALOAD        ; CLOCK       ; -0.500       ; 1.881      ; 2.099      ;
+; 0.534  ; ALOAD     ; inst2~_emulated  ; ALOAD        ; CLOCK       ; -0.500       ; 1.881      ; 2.099      ;
+; 0.534  ; ALOAD     ; inst12~_emulated ; ALOAD        ; CLOCK       ; -0.500       ; 1.881      ; 2.099      ;
+; 0.534  ; ALOAD     ; inst11~_emulated ; ALOAD        ; CLOCK       ; -0.500       ; 1.881      ; 2.099      ;
++--------+-----------+------------------+--------------+-------------+--------------+------------+------------+
 
 
 ----------------------------------------------
@@ -494,7 +482,7 @@ No synchronizer chains to report.
 +-------+--------+-------------------+
 ; Clock ; Slack  ; End Point TNS     ;
 +-------+--------+-------------------+
-; CLOCK ; -1.344 ; -6.464            ;
+; CLOCK ; -1.008 ; -4.888            ;
 +-------+--------+-------------------+
 
 
@@ -503,7 +491,7 @@ No synchronizer chains to report.
 +-------+-------+-------------------+
 ; Clock ; Slack ; End Point TNS     ;
 +-------+-------+-------------------+
-; CLOCK ; 0.503 ; 0.000             ;
+; CLOCK ; 0.704 ; 0.000             ;
 +-------+-------+-------------------+
 
 
@@ -535,120 +523,114 @@ No synchronizer chains to report.
 +-------+--------+---------------------------------+
 
 
-+------------------------------------------------------------------------------------------------------------------+
-; Fast 1200mV 0C Model Setup: 'CLOCK'                                                                              ;
-+--------+-----------------+-----------------+--------------+-------------+--------------+------------+------------+
-; Slack  ; From Node       ; To Node         ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
-+--------+-----------------+-----------------+--------------+-------------+--------------+------------+------------+
-; -1.344 ; inst2~1         ; inst3~_emulated ; ALOAD        ; CLOCK       ; 0.500        ; -0.397     ; 1.414      ;
-; -1.324 ; inst2~1         ; inst~_emulated  ; ALOAD        ; CLOCK       ; 0.500        ; -0.397     ; 1.394      ;
-; -1.318 ; inst~1          ; inst~_emulated  ; ALOAD        ; CLOCK       ; 0.500        ; -0.413     ; 1.372      ;
-; -1.318 ; inst1~1         ; inst~_emulated  ; ALOAD        ; CLOCK       ; 0.500        ; -0.413     ; 1.372      ;
-; -1.302 ; inst4~1         ; inst~_emulated  ; ALOAD        ; CLOCK       ; 0.500        ; -0.411     ; 1.358      ;
-; -1.290 ; inst1~1         ; inst2~_emulated ; ALOAD        ; CLOCK       ; 0.500        ; -0.413     ; 1.344      ;
-; -1.277 ; inst~1          ; inst1~_emulated ; ALOAD        ; CLOCK       ; 0.500        ; -0.413     ; 1.331      ;
-; -1.236 ; inst3~1         ; inst~_emulated  ; ALOAD        ; CLOCK       ; 0.500        ; -0.412     ; 1.291      ;
-; -1.229 ; inst3~1         ; inst4~_emulated ; ALOAD        ; CLOCK       ; 0.500        ; -0.412     ; 1.284      ;
-; -0.937 ; ALOAD           ; inst~_emulated  ; ALOAD        ; CLOCK       ; 0.500        ; 1.148      ; 2.552      ;
-; -0.909 ; ALOAD           ; inst2~_emulated ; ALOAD        ; CLOCK       ; 0.500        ; 1.148      ; 2.524      ;
-; -0.888 ; ALOAD           ; inst1~_emulated ; ALOAD        ; CLOCK       ; 0.500        ; 1.148      ; 2.503      ;
-; -0.866 ; ALOAD           ; inst3~_emulated ; ALOAD        ; CLOCK       ; 0.500        ; 1.148      ; 2.481      ;
-; -0.841 ; ALOAD           ; inst4~_emulated ; ALOAD        ; CLOCK       ; 0.500        ; 1.148      ; 2.456      ;
-; -0.483 ; inst1~_emulated ; inst~_emulated  ; CLOCK        ; CLOCK       ; 1.000        ; -0.037     ; 1.433      ;
-; -0.481 ; inst~_emulated  ; inst~_emulated  ; CLOCK        ; CLOCK       ; 1.000        ; -0.037     ; 1.431      ;
-; -0.473 ; inst4~_emulated ; inst~_emulated  ; CLOCK        ; CLOCK       ; 1.000        ; -0.037     ; 1.423      ;
-; -0.455 ; inst1~_emulated ; inst2~_emulated ; CLOCK        ; CLOCK       ; 1.000        ; -0.037     ; 1.405      ;
-; -0.440 ; inst~_emulated  ; inst1~_emulated ; CLOCK        ; CLOCK       ; 1.000        ; -0.037     ; 1.390      ;
-; -0.438 ; inst2~1         ; inst2~_emulated ; ALOAD        ; CLOCK       ; 0.500        ; -0.397     ; 0.508      ;
-; -0.418 ; inst2~_emulated ; inst3~_emulated ; CLOCK        ; CLOCK       ; 1.000        ; -0.037     ; 1.368      ;
-; -0.398 ; inst2~_emulated ; inst~_emulated  ; CLOCK        ; CLOCK       ; 1.000        ; -0.037     ; 1.348      ;
-; -0.398 ; inst3~_emulated ; inst~_emulated  ; CLOCK        ; CLOCK       ; 1.000        ; -0.037     ; 1.348      ;
-; -0.391 ; inst3~_emulated ; inst4~_emulated ; CLOCK        ; CLOCK       ; 1.000        ; -0.037     ; 1.341      ;
-; -0.350 ; inst1~1         ; inst1~_emulated ; ALOAD        ; CLOCK       ; 0.500        ; -0.413     ; 0.404      ;
-; -0.259 ; inst3~1         ; inst3~_emulated ; ALOAD        ; CLOCK       ; 0.500        ; -0.412     ; 0.314      ;
-; -0.253 ; inst4~1         ; inst4~_emulated ; ALOAD        ; CLOCK       ; 0.500        ; -0.411     ; 0.309      ;
-; -0.097 ; ALOAD           ; inst~_emulated  ; ALOAD        ; CLOCK       ; 1.000        ; 1.148      ; 2.212      ;
-; -0.069 ; ALOAD           ; inst2~_emulated ; ALOAD        ; CLOCK       ; 1.000        ; 1.148      ; 2.184      ;
-; -0.048 ; ALOAD           ; inst1~_emulated ; ALOAD        ; CLOCK       ; 1.000        ; 1.148      ; 2.163      ;
-; -0.026 ; ALOAD           ; inst3~_emulated ; ALOAD        ; CLOCK       ; 1.000        ; 1.148      ; 2.141      ;
-; -0.001 ; ALOAD           ; inst4~_emulated ; ALOAD        ; CLOCK       ; 1.000        ; 1.148      ; 2.116      ;
-+--------+-----------------+-----------------+--------------+-------------+--------------+------------+------------+
++--------------------------------------------------------------------------------------------------------------------+
+; Fast 1200mV 0C Model Setup: 'CLOCK'                                                                                ;
++--------+------------------+------------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node        ; To Node          ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+------------------+------------------+--------------+-------------+--------------+------------+------------+
+; -1.008 ; inst10~1         ; inst12~_emulated ; ALOAD        ; CLOCK       ; 0.500        ; -0.419     ; 1.056      ;
+; -0.989 ; inst10~1         ; inst1~_emulated  ; ALOAD        ; CLOCK       ; 0.500        ; -0.419     ; 1.037      ;
+; -0.988 ; ALOAD            ; inst12~_emulated ; ALOAD        ; CLOCK       ; 0.500        ; 1.148      ; 2.603      ;
+; -0.987 ; inst12~1         ; inst11~_emulated ; ALOAD        ; CLOCK       ; 0.500        ; -0.418     ; 1.036      ;
+; -0.982 ; ALOAD            ; inst11~_emulated ; ALOAD        ; CLOCK       ; 0.500        ; 1.148      ; 2.597      ;
+; -0.969 ; ALOAD            ; inst1~_emulated  ; ALOAD        ; CLOCK       ; 0.500        ; 1.148      ; 2.584      ;
+; -0.964 ; inst2~1          ; inst12~_emulated ; ALOAD        ; CLOCK       ; 0.500        ; -0.418     ; 1.013      ;
+; -0.955 ; inst11~1         ; inst10~_emulated ; ALOAD        ; CLOCK       ; 0.500        ; -0.417     ; 1.005      ;
+; -0.949 ; inst1~1          ; inst2~_emulated  ; ALOAD        ; CLOCK       ; 0.500        ; -0.419     ; 0.997      ;
+; -0.932 ; ALOAD            ; inst10~_emulated ; ALOAD        ; CLOCK       ; 0.500        ; 1.148      ; 2.547      ;
+; -0.919 ; ALOAD            ; inst2~_emulated  ; ALOAD        ; CLOCK       ; 0.500        ; 1.148      ; 2.534      ;
+; -0.899 ; inst11~1         ; inst12~_emulated ; ALOAD        ; CLOCK       ; 0.500        ; -0.417     ; 0.949      ;
+; -0.441 ; inst12~1         ; inst12~_emulated ; ALOAD        ; CLOCK       ; 0.500        ; -0.418     ; 0.490      ;
+; -0.371 ; inst2~_emulated  ; inst12~_emulated ; CLOCK        ; CLOCK       ; 1.000        ; -0.037     ; 1.321      ;
+; -0.364 ; inst1~1          ; inst1~_emulated  ; ALOAD        ; CLOCK       ; 0.500        ; -0.419     ; 0.412      ;
+; -0.354 ; inst2~1          ; inst2~_emulated  ; ALOAD        ; CLOCK       ; 0.500        ; -0.418     ; 0.403      ;
+; -0.344 ; inst11~1         ; inst11~_emulated ; ALOAD        ; CLOCK       ; 0.500        ; -0.417     ; 0.394      ;
+; -0.306 ; inst10~_emulated ; inst12~_emulated ; CLOCK        ; CLOCK       ; 1.000        ; -0.037     ; 1.256      ;
+; -0.297 ; inst12~_emulated ; inst11~_emulated ; CLOCK        ; CLOCK       ; 1.000        ; -0.037     ; 1.247      ;
+; -0.287 ; inst10~_emulated ; inst1~_emulated  ; CLOCK        ; CLOCK       ; 1.000        ; -0.037     ; 1.237      ;
+; -0.269 ; inst11~_emulated ; inst10~_emulated ; CLOCK        ; CLOCK       ; 1.000        ; -0.037     ; 1.219      ;
+; -0.257 ; inst1~_emulated  ; inst2~_emulated  ; CLOCK        ; CLOCK       ; 1.000        ; -0.037     ; 1.207      ;
+; -0.213 ; inst11~_emulated ; inst12~_emulated ; CLOCK        ; CLOCK       ; 1.000        ; -0.037     ; 1.163      ;
+; -0.201 ; ALOAD            ; inst12~_emulated ; ALOAD        ; CLOCK       ; 1.000        ; 1.148      ; 2.316      ;
+; -0.196 ; ALOAD            ; inst11~_emulated ; ALOAD        ; CLOCK       ; 1.000        ; 1.148      ; 2.311      ;
+; -0.195 ; inst10~1         ; inst10~_emulated ; ALOAD        ; CLOCK       ; 0.500        ; -0.419     ; 0.243      ;
+; -0.182 ; ALOAD            ; inst1~_emulated  ; ALOAD        ; CLOCK       ; 1.000        ; 1.148      ; 2.297      ;
+; -0.135 ; ALOAD            ; inst10~_emulated ; ALOAD        ; CLOCK       ; 1.000        ; 1.148      ; 2.250      ;
+; -0.122 ; ALOAD            ; inst2~_emulated  ; ALOAD        ; CLOCK       ; 1.000        ; 1.148      ; 2.237      ;
++--------+------------------+------------------+--------------+-------------+--------------+------------+------------+
 
 
-+-----------------------------------------------------------------------------------------------------------------+
-; Fast 1200mV 0C Model Hold: 'CLOCK'                                                                              ;
-+-------+-----------------+-----------------+--------------+-------------+--------------+------------+------------+
-; Slack ; From Node       ; To Node         ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
-+-------+-----------------+-----------------+--------------+-------------+--------------+------------+------------+
-; 0.503 ; ALOAD           ; inst~_emulated  ; ALOAD        ; CLOCK       ; 0.000        ; 1.193      ; 1.820      ;
-; 0.590 ; ALOAD           ; inst3~_emulated ; ALOAD        ; CLOCK       ; 0.000        ; 1.193      ; 1.907      ;
-; 0.613 ; ALOAD           ; inst4~_emulated ; ALOAD        ; CLOCK       ; 0.000        ; 1.193      ; 1.930      ;
-; 0.623 ; ALOAD           ; inst1~_emulated ; ALOAD        ; CLOCK       ; 0.000        ; 1.193      ; 1.940      ;
-; 0.646 ; ALOAD           ; inst2~_emulated ; ALOAD        ; CLOCK       ; 0.000        ; 1.193      ; 1.963      ;
-; 0.960 ; inst4~1         ; inst4~_emulated ; ALOAD        ; CLOCK       ; -0.500       ; -0.332     ; 0.252      ;
-; 0.972 ; inst3~1         ; inst3~_emulated ; ALOAD        ; CLOCK       ; -0.500       ; -0.333     ; 0.263      ;
-; 0.989 ; inst2~_emulated ; inst~_emulated  ; CLOCK        ; CLOCK       ; 0.000        ; 0.037      ; 1.110      ;
-; 0.998 ; inst3~_emulated ; inst~_emulated  ; CLOCK        ; CLOCK       ; 0.000        ; 0.037      ; 1.119      ;
-; 1.004 ; inst1~1         ; inst1~_emulated ; ALOAD        ; CLOCK       ; -0.500       ; -0.334     ; 0.294      ;
-; 1.030 ; inst2~_emulated ; inst3~_emulated ; CLOCK        ; CLOCK       ; 0.000        ; 0.037      ; 1.151      ;
-; 1.033 ; inst~1          ; inst~_emulated  ; ALOAD        ; CLOCK       ; -0.500       ; -0.333     ; 0.324      ;
-; 1.050 ; inst3~_emulated ; inst4~_emulated ; CLOCK        ; CLOCK       ; 0.000        ; 0.037      ; 1.171      ;
-; 1.058 ; inst~_emulated  ; inst~_emulated  ; CLOCK        ; CLOCK       ; 0.000        ; 0.037      ; 1.179      ;
-; 1.063 ; inst~_emulated  ; inst1~_emulated ; CLOCK        ; CLOCK       ; 0.000        ; 0.037      ; 1.184      ;
-; 1.075 ; inst1~_emulated ; inst~_emulated  ; CLOCK        ; CLOCK       ; 0.000        ; 0.037      ; 1.196      ;
-; 1.081 ; inst1~_emulated ; inst2~_emulated ; CLOCK        ; CLOCK       ; 0.000        ; 0.037      ; 1.202      ;
-; 1.083 ; inst2~1         ; inst2~_emulated ; ALOAD        ; CLOCK       ; -0.500       ; -0.318     ; 0.389      ;
-; 1.086 ; inst4~_emulated ; inst~_emulated  ; CLOCK        ; CLOCK       ; 0.000        ; 0.037      ; 1.207      ;
-; 1.353 ; ALOAD           ; inst~_emulated  ; ALOAD        ; CLOCK       ; -0.500       ; 1.193      ; 2.170      ;
-; 1.419 ; ALOAD           ; inst3~_emulated ; ALOAD        ; CLOCK       ; -0.500       ; 1.193      ; 2.236      ;
-; 1.442 ; ALOAD           ; inst4~_emulated ; ALOAD        ; CLOCK       ; -0.500       ; 1.193      ; 2.259      ;
-; 1.453 ; ALOAD           ; inst1~_emulated ; ALOAD        ; CLOCK       ; -0.500       ; 1.193      ; 2.270      ;
-; 1.475 ; ALOAD           ; inst2~_emulated ; ALOAD        ; CLOCK       ; -0.500       ; 1.193      ; 2.292      ;
-; 1.774 ; inst3~1         ; inst~_emulated  ; ALOAD        ; CLOCK       ; -0.500       ; -0.333     ; 1.065      ;
-; 1.826 ; inst3~1         ; inst4~_emulated ; ALOAD        ; CLOCK       ; -0.500       ; -0.333     ; 1.117      ;
-; 1.834 ; inst2~1         ; inst~_emulated  ; ALOAD        ; CLOCK       ; -0.500       ; -0.318     ; 1.140      ;
-; 1.838 ; inst~1          ; inst1~_emulated ; ALOAD        ; CLOCK       ; -0.500       ; -0.333     ; 1.129      ;
-; 1.846 ; inst1~1         ; inst~_emulated  ; ALOAD        ; CLOCK       ; -0.500       ; -0.334     ; 1.136      ;
-; 1.851 ; inst4~1         ; inst~_emulated  ; ALOAD        ; CLOCK       ; -0.500       ; -0.332     ; 1.143      ;
-; 1.852 ; inst1~1         ; inst2~_emulated ; ALOAD        ; CLOCK       ; -0.500       ; -0.334     ; 1.142      ;
-; 1.875 ; inst2~1         ; inst3~_emulated ; ALOAD        ; CLOCK       ; -0.500       ; -0.318     ; 1.181      ;
-+-------+-----------------+-----------------+--------------+-------------+--------------+------------+------------+
++-------------------------------------------------------------------------------------------------------------------+
+; Fast 1200mV 0C Model Hold: 'CLOCK'                                                                                ;
++-------+------------------+------------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node        ; To Node          ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+------------------+------------------+--------------+-------------+--------------+------------+------------+
+; 0.704 ; ALOAD            ; inst12~_emulated ; ALOAD        ; CLOCK       ; 0.000        ; 1.193      ; 2.021      ;
+; 0.714 ; ALOAD            ; inst2~_emulated  ; ALOAD        ; CLOCK       ; 0.000        ; 1.193      ; 2.031      ;
+; 0.747 ; ALOAD            ; inst11~_emulated ; ALOAD        ; CLOCK       ; 0.000        ; 1.193      ; 2.064      ;
+; 0.750 ; ALOAD            ; inst10~_emulated ; ALOAD        ; CLOCK       ; 0.000        ; 1.193      ; 2.067      ;
+; 0.769 ; ALOAD            ; inst1~_emulated  ; ALOAD        ; CLOCK       ; 0.000        ; 1.193      ; 2.086      ;
+; 0.885 ; inst11~_emulated ; inst12~_emulated ; CLOCK        ; CLOCK       ; 0.000        ; 0.037      ; 1.006      ;
+; 0.895 ; inst12~_emulated ; inst11~_emulated ; CLOCK        ; CLOCK       ; 0.000        ; 0.037      ; 1.016      ;
+; 0.896 ; inst1~_emulated  ; inst2~_emulated  ; CLOCK        ; CLOCK       ; 0.000        ; 0.037      ; 1.017      ;
+; 0.915 ; inst10~_emulated ; inst12~_emulated ; CLOCK        ; CLOCK       ; 0.000        ; 0.037      ; 1.036      ;
+; 0.917 ; inst10~1         ; inst10~_emulated ; ALOAD        ; CLOCK       ; -0.500       ; -0.340     ; 0.201      ;
+; 0.922 ; inst10~_emulated ; inst1~_emulated  ; CLOCK        ; CLOCK       ; 0.000        ; 0.037      ; 1.043      ;
+; 0.931 ; inst11~_emulated ; inst10~_emulated ; CLOCK        ; CLOCK       ; 0.000        ; 0.037      ; 1.052      ;
+; 0.992 ; inst2~_emulated  ; inst12~_emulated ; CLOCK        ; CLOCK       ; 0.000        ; 0.037      ; 1.113      ;
+; 1.020 ; inst2~1          ; inst2~_emulated  ; ALOAD        ; CLOCK       ; -0.500       ; -0.338     ; 0.306      ;
+; 1.040 ; inst11~1         ; inst11~_emulated ; ALOAD        ; CLOCK       ; -0.500       ; -0.337     ; 0.327      ;
+; 1.059 ; inst1~1          ; inst1~_emulated  ; ALOAD        ; CLOCK       ; -0.500       ; -0.340     ; 0.343      ;
+; 1.089 ; inst12~1         ; inst12~_emulated ; ALOAD        ; CLOCK       ; -0.500       ; -0.339     ; 0.374      ;
+; 1.477 ; ALOAD            ; inst12~_emulated ; ALOAD        ; CLOCK       ; -0.500       ; 1.193      ; 2.294      ;
+; 1.502 ; ALOAD            ; inst2~_emulated  ; ALOAD        ; CLOCK       ; -0.500       ; 1.193      ; 2.319      ;
+; 1.527 ; ALOAD            ; inst11~_emulated ; ALOAD        ; CLOCK       ; -0.500       ; 1.193      ; 2.344      ;
+; 1.538 ; ALOAD            ; inst10~_emulated ; ALOAD        ; CLOCK       ; -0.500       ; 1.193      ; 2.355      ;
+; 1.540 ; inst11~1         ; inst12~_emulated ; ALOAD        ; CLOCK       ; -0.500       ; -0.337     ; 0.827      ;
+; 1.550 ; ALOAD            ; inst1~_emulated  ; ALOAD        ; CLOCK       ; -0.500       ; 1.193      ; 2.367      ;
+; 1.554 ; inst12~1         ; inst11~_emulated ; ALOAD        ; CLOCK       ; -0.500       ; -0.339     ; 0.839      ;
+; 1.557 ; inst1~1          ; inst2~_emulated  ; ALOAD        ; CLOCK       ; -0.500       ; -0.340     ; 0.841      ;
+; 1.575 ; inst2~1          ; inst12~_emulated ; ALOAD        ; CLOCK       ; -0.500       ; -0.338     ; 0.861      ;
+; 1.582 ; inst10~1         ; inst12~_emulated ; ALOAD        ; CLOCK       ; -0.500       ; -0.340     ; 0.866      ;
+; 1.586 ; inst11~1         ; inst10~_emulated ; ALOAD        ; CLOCK       ; -0.500       ; -0.337     ; 0.873      ;
+; 1.589 ; inst10~1         ; inst1~_emulated  ; ALOAD        ; CLOCK       ; -0.500       ; -0.340     ; 0.873      ;
++-------+------------------+------------------+--------------+-------------+--------------+------------+------------+
 
 
-+------------------------------------------------------------------------------------------------------------+
-; Fast 1200mV 0C Model Recovery: 'CLOCK'                                                                     ;
-+--------+-----------+-----------------+--------------+-------------+--------------+------------+------------+
-; Slack  ; From Node ; To Node         ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
-+--------+-----------+-----------------+--------------+-------------+--------------+------------+------------+
-; -0.056 ; ALOAD     ; inst4~_emulated ; ALOAD        ; CLOCK       ; 0.500        ; 1.148      ; 1.671      ;
-; -0.056 ; ALOAD     ; inst~_emulated  ; ALOAD        ; CLOCK       ; 0.500        ; 1.148      ; 1.671      ;
-; -0.056 ; ALOAD     ; inst1~_emulated ; ALOAD        ; CLOCK       ; 0.500        ; 1.148      ; 1.671      ;
-; -0.056 ; ALOAD     ; inst2~_emulated ; ALOAD        ; CLOCK       ; 0.500        ; 1.148      ; 1.671      ;
-; -0.056 ; ALOAD     ; inst3~_emulated ; ALOAD        ; CLOCK       ; 0.500        ; 1.148      ; 1.671      ;
-; 0.833  ; ALOAD     ; inst4~_emulated ; ALOAD        ; CLOCK       ; 1.000        ; 1.148      ; 1.282      ;
-; 0.833  ; ALOAD     ; inst~_emulated  ; ALOAD        ; CLOCK       ; 1.000        ; 1.148      ; 1.282      ;
-; 0.833  ; ALOAD     ; inst1~_emulated ; ALOAD        ; CLOCK       ; 1.000        ; 1.148      ; 1.282      ;
-; 0.833  ; ALOAD     ; inst2~_emulated ; ALOAD        ; CLOCK       ; 1.000        ; 1.148      ; 1.282      ;
-; 0.833  ; ALOAD     ; inst3~_emulated ; ALOAD        ; CLOCK       ; 1.000        ; 1.148      ; 1.282      ;
-+--------+-----------+-----------------+--------------+-------------+--------------+------------+------------+
++-------------------------------------------------------------------------------------------------------------+
+; Fast 1200mV 0C Model Recovery: 'CLOCK'                                                                      ;
++--------+-----------+------------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node ; To Node          ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+-----------+------------------+--------------+-------------+--------------+------------+------------+
+; -0.056 ; ALOAD     ; inst10~_emulated ; ALOAD        ; CLOCK       ; 0.500        ; 1.148      ; 1.671      ;
+; -0.056 ; ALOAD     ; inst1~_emulated  ; ALOAD        ; CLOCK       ; 0.500        ; 1.148      ; 1.671      ;
+; -0.056 ; ALOAD     ; inst2~_emulated  ; ALOAD        ; CLOCK       ; 0.500        ; 1.148      ; 1.671      ;
+; -0.056 ; ALOAD     ; inst12~_emulated ; ALOAD        ; CLOCK       ; 0.500        ; 1.148      ; 1.671      ;
+; -0.056 ; ALOAD     ; inst11~_emulated ; ALOAD        ; CLOCK       ; 0.500        ; 1.148      ; 1.671      ;
+; 0.833  ; ALOAD     ; inst10~_emulated ; ALOAD        ; CLOCK       ; 1.000        ; 1.148      ; 1.282      ;
+; 0.833  ; ALOAD     ; inst1~_emulated  ; ALOAD        ; CLOCK       ; 1.000        ; 1.148      ; 1.282      ;
+; 0.833  ; ALOAD     ; inst2~_emulated  ; ALOAD        ; CLOCK       ; 1.000        ; 1.148      ; 1.282      ;
+; 0.833  ; ALOAD     ; inst12~_emulated ; ALOAD        ; CLOCK       ; 1.000        ; 1.148      ; 1.282      ;
+; 0.833  ; ALOAD     ; inst11~_emulated ; ALOAD        ; CLOCK       ; 1.000        ; 1.148      ; 1.282      ;
++--------+-----------+------------------+--------------+-------------+--------------+------------+------------+
 
 
-+------------------------------------------------------------------------------------------------------------+
-; Fast 1200mV 0C Model Removal: 'CLOCK'                                                                      ;
-+--------+-----------+-----------------+--------------+-------------+--------------+------------+------------+
-; Slack  ; From Node ; To Node         ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
-+--------+-----------+-----------------+--------------+-------------+--------------+------------+------------+
-; -0.078 ; ALOAD     ; inst4~_emulated ; ALOAD        ; CLOCK       ; 0.000        ; 1.193      ; 1.239      ;
-; -0.078 ; ALOAD     ; inst~_emulated  ; ALOAD        ; CLOCK       ; 0.000        ; 1.193      ; 1.239      ;
-; -0.078 ; ALOAD     ; inst1~_emulated ; ALOAD        ; CLOCK       ; 0.000        ; 1.193      ; 1.239      ;
-; -0.078 ; ALOAD     ; inst2~_emulated ; ALOAD        ; CLOCK       ; 0.000        ; 1.193      ; 1.239      ;
-; -0.078 ; ALOAD     ; inst3~_emulated ; ALOAD        ; CLOCK       ; 0.000        ; 1.193      ; 1.239      ;
-; 0.806  ; ALOAD     ; inst4~_emulated ; ALOAD        ; CLOCK       ; -0.500       ; 1.193      ; 1.623      ;
-; 0.806  ; ALOAD     ; inst~_emulated  ; ALOAD        ; CLOCK       ; -0.500       ; 1.193      ; 1.623      ;
-; 0.806  ; ALOAD     ; inst1~_emulated ; ALOAD        ; CLOCK       ; -0.500       ; 1.193      ; 1.623      ;
-; 0.806  ; ALOAD     ; inst2~_emulated ; ALOAD        ; CLOCK       ; -0.500       ; 1.193      ; 1.623      ;
-; 0.806  ; ALOAD     ; inst3~_emulated ; ALOAD        ; CLOCK       ; -0.500       ; 1.193      ; 1.623      ;
-+--------+-----------+-----------------+--------------+-------------+--------------+------------+------------+
++-------------------------------------------------------------------------------------------------------------+
+; Fast 1200mV 0C Model Removal: 'CLOCK'                                                                       ;
++--------+-----------+------------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node ; To Node          ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+-----------+------------------+--------------+-------------+--------------+------------+------------+
+; -0.078 ; ALOAD     ; inst10~_emulated ; ALOAD        ; CLOCK       ; 0.000        ; 1.193      ; 1.239      ;
+; -0.078 ; ALOAD     ; inst1~_emulated  ; ALOAD        ; CLOCK       ; 0.000        ; 1.193      ; 1.239      ;
+; -0.078 ; ALOAD     ; inst2~_emulated  ; ALOAD        ; CLOCK       ; 0.000        ; 1.193      ; 1.239      ;
+; -0.078 ; ALOAD     ; inst12~_emulated ; ALOAD        ; CLOCK       ; 0.000        ; 1.193      ; 1.239      ;
+; -0.078 ; ALOAD     ; inst11~_emulated ; ALOAD        ; CLOCK       ; 0.000        ; 1.193      ; 1.239      ;
+; 0.806  ; ALOAD     ; inst10~_emulated ; ALOAD        ; CLOCK       ; -0.500       ; 1.193      ; 1.623      ;
+; 0.806  ; ALOAD     ; inst1~_emulated  ; ALOAD        ; CLOCK       ; -0.500       ; 1.193      ; 1.623      ;
+; 0.806  ; ALOAD     ; inst2~_emulated  ; ALOAD        ; CLOCK       ; -0.500       ; 1.193      ; 1.623      ;
+; 0.806  ; ALOAD     ; inst12~_emulated ; ALOAD        ; CLOCK       ; -0.500       ; 1.193      ; 1.623      ;
+; 0.806  ; ALOAD     ; inst11~_emulated ; ALOAD        ; CLOCK       ; -0.500       ; 1.193      ; 1.623      ;
++--------+-----------+------------------+--------------+-------------+--------------+------------+------------+
 
 
 ----------------------------------------------
@@ -657,18 +639,18 @@ No synchronizer chains to report.
 No synchronizer chains to report.
 
 
-+-------------------------------------------------------------------------------+
-; Multicorner Timing Analysis Summary                                           ;
-+------------------+---------+-------+----------+---------+---------------------+
-; Clock            ; Setup   ; Hold  ; Recovery ; Removal ; Minimum Pulse Width ;
-+------------------+---------+-------+----------+---------+---------------------+
-; Worst-case Slack ; -2.193  ; 0.503 ; -0.056   ; -0.120  ; -3.000              ;
-;  ALOAD           ; N/A     ; N/A   ; N/A      ; N/A     ; -3.000              ;
-;  CLOCK           ; -2.193  ; 0.503 ; -0.056   ; -0.120  ; -3.000              ;
-; Design-wide TNS  ; -10.124 ; 0.0   ; -0.28    ; -0.6    ; -11.32              ;
-;  ALOAD           ; N/A     ; N/A   ; N/A      ; N/A     ; -3.000              ;
-;  CLOCK           ; -10.124 ; 0.000 ; -0.280   ; -0.600  ; -8.320              ;
-+------------------+---------+-------+----------+---------+---------------------+
++------------------------------------------------------------------------------+
+; Multicorner Timing Analysis Summary                                          ;
++------------------+--------+-------+----------+---------+---------------------+
+; Clock            ; Setup  ; Hold  ; Recovery ; Removal ; Minimum Pulse Width ;
++------------------+--------+-------+----------+---------+---------------------+
+; Worst-case Slack ; -1.658 ; 0.704 ; -0.056   ; -0.120  ; -3.000              ;
+;  ALOAD           ; N/A    ; N/A   ; N/A      ; N/A     ; -3.000              ;
+;  CLOCK           ; -1.658 ; 0.704 ; -0.056   ; -0.120  ; -3.000              ;
+; Design-wide TNS  ; -7.864 ; 0.0   ; -0.28    ; -0.6    ; -11.32              ;
+;  ALOAD           ; N/A    ; N/A   ; N/A      ; N/A     ; -3.000              ;
+;  CLOCK           ; -7.864 ; 0.000 ; -0.280   ; -0.600  ; -8.320              ;
++------------------+--------+-------+----------+---------+---------------------+
 
 
 +------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -676,12 +658,17 @@ No synchronizer chains to report.
 +---------------+--------------+-------------------+-------------------------+-------------------------+---------------+---------------------+----------------+------------------+--------+------------------+------------------------+------------------------+--------------+---------------+-----------------+-------+---------------------+--------------------+---------------+-----------------+-------------+
 ; Pin           ; I/O Standard ; Near Tline Length ; Near Tline L per Length ; Near Tline C per Length ; Near Series R ; Near Differential R ; Near Pull-up R ; Near Pull-down R ; Near C ; Far Tline Length ; Far Tline L per Length ; Far Tline C per Length ; Far Series R ; Far Pull-up R ; Far Pull-down R ; Far C ; Termination Voltage ; Far Differential R ; EBD File Name ; EBD Signal Name ; EBD Far-end ;
 +---------------+--------------+-------------------+-------------------------+-------------------------+---------------+---------------------+----------------+------------------+--------+------------------+------------------------+------------------------+--------------+---------------+-----------------+-------+---------------------+--------------------+---------------+-----------------+-------------+
-; OUT           ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; Out           ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
 ; STATE[4]      ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
 ; STATE[3]      ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
 ; STATE[2]      ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
 ; STATE[1]      ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
 ; STATE[0]      ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; TEST_OUT[4]   ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; TEST_OUT[3]   ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; TEST_OUT[2]   ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; TEST_OUT[1]   ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; TEST_OUT[0]   ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
 ; ~ALTERA_DCLK~ ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
 ; ~ALTERA_nCEO~ ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
 +---------------+--------------+-------------------+-------------------------+-------------------------+---------------+---------------------+----------------+------------------+--------+------------------+------------------------+------------------------+--------------+---------------+-----------------+-------+---------------------+--------------------+---------------+-----------------+-------------+
@@ -693,11 +680,11 @@ No synchronizer chains to report.
 ; Pin                     ; I/O Standard ; 10-90 Rise Time ; 90-10 Fall Time ;
 +-------------------------+--------------+-----------------+-----------------+
 ; ALOAD                   ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
-; ASDATA[0]               ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
-; ASDATA[1]               ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
-; ASDATA[3]               ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
-; ASDATA[2]               ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
 ; ASDATA[4]               ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; ASDATA[1]               ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; ASDATA[2]               ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; ASDATA[3]               ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; ASDATA[0]               ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
 ; CLOCK                   ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
 ; ~ALTERA_ASDO_DATA1~     ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
 ; ~ALTERA_FLASH_nCE_nCSO~ ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
@@ -710,12 +697,17 @@ No synchronizer chains to report.
 +---------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
 ; Pin           ; I/O Standard ; Board Delay on Rise ; Board Delay on Fall ; Steady State Voh at FPGA Pin ; Steady State Vol at FPGA Pin ; Voh Max at FPGA Pin ; Vol Min at FPGA Pin ; Ringback Voltage on Rise at FPGA Pin ; Ringback Voltage on Fall at FPGA Pin ; 10-90 Rise Time at FPGA Pin ; 90-10 Fall Time at FPGA Pin ; Monotonic Rise at FPGA Pin ; Monotonic Fall at FPGA Pin ; Steady State Voh at Far-end ; Steady State Vol at Far-end ; Voh Max at Far-end ; Vol Min at Far-end ; Ringback Voltage on Rise at Far-end ; Ringback Voltage on Fall at Far-end ; 10-90 Rise Time at Far-end ; 90-10 Fall Time at Far-end ; Monotonic Rise at Far-end ; Monotonic Fall at Far-end ;
 +---------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
-; OUT           ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 4.44e-09 V                   ; 2.33 V              ; -0.00624 V          ; 0.185 V                              ; 0.097 V                              ; 2.82e-09 s                  ; 2.56e-09 s                  ; No                         ; Yes                        ; 2.32 V                      ; 4.44e-09 V                  ; 2.33 V             ; -0.00624 V         ; 0.185 V                             ; 0.097 V                             ; 2.82e-09 s                 ; 2.56e-09 s                 ; No                        ; Yes                       ;
-; STATE[4]      ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 4.44e-09 V                   ; 2.38 V              ; -0.0145 V           ; 0.169 V                              ; 0.026 V                              ; 4.83e-10 s                  ; 4.71e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 4.44e-09 V                  ; 2.38 V             ; -0.0145 V          ; 0.169 V                             ; 0.026 V                             ; 4.83e-10 s                 ; 4.71e-10 s                 ; Yes                       ; Yes                       ;
-; STATE[3]      ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 4.44e-09 V                   ; 2.39 V              ; -0.0265 V           ; 0.2 V                                ; 0.033 V                              ; 2.94e-10 s                  ; 3.12e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 4.44e-09 V                  ; 2.39 V             ; -0.0265 V          ; 0.2 V                               ; 0.033 V                             ; 2.94e-10 s                 ; 3.12e-10 s                 ; Yes                       ; Yes                       ;
-; STATE[2]      ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 4.44e-09 V                   ; 2.33 V              ; -0.00624 V          ; 0.185 V                              ; 0.097 V                              ; 2.82e-09 s                  ; 2.56e-09 s                  ; No                         ; Yes                        ; 2.32 V                      ; 4.44e-09 V                  ; 2.33 V             ; -0.00624 V         ; 0.185 V                             ; 0.097 V                             ; 2.82e-09 s                 ; 2.56e-09 s                 ; No                        ; Yes                       ;
-; STATE[1]      ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 4.44e-09 V                   ; 2.38 V              ; -0.0145 V           ; 0.169 V                              ; 0.026 V                              ; 4.83e-10 s                  ; 4.71e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 4.44e-09 V                  ; 2.38 V             ; -0.0145 V          ; 0.169 V                             ; 0.026 V                             ; 4.83e-10 s                 ; 4.71e-10 s                 ; Yes                       ; Yes                       ;
-; STATE[0]      ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 4.44e-09 V                   ; 2.38 V              ; -0.0145 V           ; 0.169 V                              ; 0.026 V                              ; 4.83e-10 s                  ; 4.71e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 4.44e-09 V                  ; 2.38 V             ; -0.0145 V          ; 0.169 V                             ; 0.026 V                             ; 4.83e-10 s                 ; 4.71e-10 s                 ; Yes                       ; Yes                       ;
+; Out           ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 4.44e-09 V                   ; 2.38 V              ; -0.0145 V           ; 0.169 V                              ; 0.026 V                              ; 4.83e-10 s                  ; 4.71e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 4.44e-09 V                  ; 2.38 V             ; -0.0145 V          ; 0.169 V                             ; 0.026 V                             ; 4.83e-10 s                 ; 4.71e-10 s                 ; Yes                       ; Yes                       ;
+; STATE[4]      ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 5.95e-09 V                   ; 2.38 V              ; -0.016 V            ; 0.22 V                               ; 0.025 V                              ; 3.06e-10 s                  ; 3.3e-10 s                   ; Yes                        ; Yes                        ; 2.32 V                      ; 5.95e-09 V                  ; 2.38 V             ; -0.016 V           ; 0.22 V                              ; 0.025 V                             ; 3.06e-10 s                 ; 3.3e-10 s                  ; Yes                       ; Yes                       ;
+; STATE[3]      ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 5.95e-09 V                   ; 2.38 V              ; -0.016 V            ; 0.22 V                               ; 0.025 V                              ; 3.06e-10 s                  ; 3.3e-10 s                   ; Yes                        ; Yes                        ; 2.32 V                      ; 5.95e-09 V                  ; 2.38 V             ; -0.016 V           ; 0.22 V                              ; 0.025 V                             ; 3.06e-10 s                 ; 3.3e-10 s                  ; Yes                       ; Yes                       ;
+; STATE[2]      ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 4.44e-09 V                   ; 2.39 V              ; -0.0265 V           ; 0.2 V                                ; 0.033 V                              ; 2.94e-10 s                  ; 3.12e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 4.44e-09 V                  ; 2.39 V             ; -0.0265 V          ; 0.2 V                               ; 0.033 V                             ; 2.94e-10 s                 ; 3.12e-10 s                 ; Yes                       ; Yes                       ;
+; STATE[1]      ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 5.95e-09 V                   ; 2.38 V              ; -0.016 V            ; 0.22 V                               ; 0.025 V                              ; 3.06e-10 s                  ; 3.3e-10 s                   ; Yes                        ; Yes                        ; 2.32 V                      ; 5.95e-09 V                  ; 2.38 V             ; -0.016 V           ; 0.22 V                              ; 0.025 V                             ; 3.06e-10 s                 ; 3.3e-10 s                  ; Yes                       ; Yes                       ;
+; STATE[0]      ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 5.95e-09 V                   ; 2.38 V              ; -0.016 V            ; 0.22 V                               ; 0.025 V                              ; 3.06e-10 s                  ; 3.3e-10 s                   ; Yes                        ; Yes                        ; 2.32 V                      ; 5.95e-09 V                  ; 2.38 V             ; -0.016 V           ; 0.22 V                              ; 0.025 V                             ; 3.06e-10 s                 ; 3.3e-10 s                  ; Yes                       ; Yes                       ;
+; TEST_OUT[4]   ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 5.95e-09 V                   ; 2.38 V              ; -0.016 V            ; 0.22 V                               ; 0.025 V                              ; 3.06e-10 s                  ; 3.3e-10 s                   ; Yes                        ; Yes                        ; 2.32 V                      ; 5.95e-09 V                  ; 2.38 V             ; -0.016 V           ; 0.22 V                              ; 0.025 V                             ; 3.06e-10 s                 ; 3.3e-10 s                  ; Yes                       ; Yes                       ;
+; TEST_OUT[3]   ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 5.95e-09 V                   ; 2.38 V              ; -0.016 V            ; 0.22 V                               ; 0.025 V                              ; 3.06e-10 s                  ; 3.3e-10 s                   ; Yes                        ; Yes                        ; 2.32 V                      ; 5.95e-09 V                  ; 2.38 V             ; -0.016 V           ; 0.22 V                              ; 0.025 V                             ; 3.06e-10 s                 ; 3.3e-10 s                  ; Yes                       ; Yes                       ;
+; TEST_OUT[2]   ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 4.44e-09 V                   ; 2.39 V              ; -0.0265 V           ; 0.2 V                                ; 0.033 V                              ; 2.94e-10 s                  ; 3.12e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 4.44e-09 V                  ; 2.39 V             ; -0.0265 V          ; 0.2 V                               ; 0.033 V                             ; 2.94e-10 s                 ; 3.12e-10 s                 ; Yes                       ; Yes                       ;
+; TEST_OUT[1]   ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 4.44e-09 V                   ; 2.39 V              ; -0.0265 V           ; 0.2 V                                ; 0.033 V                              ; 2.94e-10 s                  ; 3.12e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 4.44e-09 V                  ; 2.39 V             ; -0.0265 V          ; 0.2 V                               ; 0.033 V                             ; 2.94e-10 s                 ; 3.12e-10 s                 ; Yes                       ; Yes                       ;
+; TEST_OUT[0]   ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 5.95e-09 V                   ; 2.38 V              ; -0.016 V            ; 0.22 V                               ; 0.025 V                              ; 3.06e-10 s                  ; 3.3e-10 s                   ; Yes                        ; Yes                        ; 2.32 V                      ; 5.95e-09 V                  ; 2.38 V             ; -0.016 V           ; 0.22 V                              ; 0.025 V                             ; 3.06e-10 s                 ; 3.3e-10 s                  ; Yes                       ; Yes                       ;
 ; ~ALTERA_DCLK~ ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 3.45e-09 V                   ; 2.38 V              ; -0.0609 V           ; 0.148 V                              ; 0.095 V                              ; 2.82e-10 s                  ; 2.59e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 3.45e-09 V                  ; 2.38 V             ; -0.0609 V          ; 0.148 V                             ; 0.095 V                             ; 2.82e-10 s                 ; 2.59e-10 s                 ; Yes                       ; Yes                       ;
 ; ~ALTERA_nCEO~ ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 5.61e-09 V                   ; 2.38 V              ; -0.00274 V          ; 0.141 V                              ; 0.006 V                              ; 4.7e-10 s                   ; 6.02e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 5.61e-09 V                  ; 2.38 V             ; -0.00274 V         ; 0.141 V                             ; 0.006 V                             ; 4.7e-10 s                  ; 6.02e-10 s                 ; Yes                       ; Yes                       ;
 +---------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
@@ -726,12 +718,17 @@ No synchronizer chains to report.
 +---------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
 ; Pin           ; I/O Standard ; Board Delay on Rise ; Board Delay on Fall ; Steady State Voh at FPGA Pin ; Steady State Vol at FPGA Pin ; Voh Max at FPGA Pin ; Vol Min at FPGA Pin ; Ringback Voltage on Rise at FPGA Pin ; Ringback Voltage on Fall at FPGA Pin ; 10-90 Rise Time at FPGA Pin ; 90-10 Fall Time at FPGA Pin ; Monotonic Rise at FPGA Pin ; Monotonic Fall at FPGA Pin ; Steady State Voh at Far-end ; Steady State Vol at Far-end ; Voh Max at Far-end ; Vol Min at Far-end ; Ringback Voltage on Rise at Far-end ; Ringback Voltage on Fall at Far-end ; 10-90 Rise Time at Far-end ; 90-10 Fall Time at Far-end ; Monotonic Rise at Far-end ; Monotonic Fall at Far-end ;
 +---------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
-; OUT           ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 7.16e-07 V                   ; 2.33 V              ; -0.00349 V          ; 0.163 V                              ; 0.074 V                              ; 3.33e-09 s                  ; 3.14e-09 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 7.16e-07 V                  ; 2.33 V             ; -0.00349 V         ; 0.163 V                             ; 0.074 V                             ; 3.33e-09 s                 ; 3.14e-09 s                 ; Yes                       ; Yes                       ;
-; STATE[4]      ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 7.16e-07 V                   ; 2.35 V              ; -0.00832 V          ; 0.101 V                              ; 0.024 V                              ; 6.39e-10 s                  ; 6e-10 s                     ; Yes                        ; Yes                        ; 2.32 V                      ; 7.16e-07 V                  ; 2.35 V             ; -0.00832 V         ; 0.101 V                             ; 0.024 V                             ; 6.39e-10 s                 ; 6e-10 s                    ; Yes                       ; Yes                       ;
-; STATE[3]      ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 7.16e-07 V                   ; 2.36 V              ; -0.00476 V          ; 0.096 V                              ; 0.013 V                              ; 4.39e-10 s                  ; 4.15e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 7.16e-07 V                  ; 2.36 V             ; -0.00476 V         ; 0.096 V                             ; 0.013 V                             ; 4.39e-10 s                 ; 4.15e-10 s                 ; Yes                       ; Yes                       ;
-; STATE[2]      ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 7.16e-07 V                   ; 2.33 V              ; -0.00349 V          ; 0.163 V                              ; 0.074 V                              ; 3.33e-09 s                  ; 3.14e-09 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 7.16e-07 V                  ; 2.33 V             ; -0.00349 V         ; 0.163 V                             ; 0.074 V                             ; 3.33e-09 s                 ; 3.14e-09 s                 ; Yes                       ; Yes                       ;
-; STATE[1]      ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 7.16e-07 V                   ; 2.35 V              ; -0.00832 V          ; 0.101 V                              ; 0.024 V                              ; 6.39e-10 s                  ; 6e-10 s                     ; Yes                        ; Yes                        ; 2.32 V                      ; 7.16e-07 V                  ; 2.35 V             ; -0.00832 V         ; 0.101 V                             ; 0.024 V                             ; 6.39e-10 s                 ; 6e-10 s                    ; Yes                       ; Yes                       ;
-; STATE[0]      ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 7.16e-07 V                   ; 2.35 V              ; -0.00832 V          ; 0.101 V                              ; 0.024 V                              ; 6.39e-10 s                  ; 6e-10 s                     ; Yes                        ; Yes                        ; 2.32 V                      ; 7.16e-07 V                  ; 2.35 V             ; -0.00832 V         ; 0.101 V                             ; 0.024 V                             ; 6.39e-10 s                 ; 6e-10 s                    ; Yes                       ; Yes                       ;
+; Out           ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 7.16e-07 V                   ; 2.35 V              ; -0.00832 V          ; 0.101 V                              ; 0.024 V                              ; 6.39e-10 s                  ; 6e-10 s                     ; Yes                        ; Yes                        ; 2.32 V                      ; 7.16e-07 V                  ; 2.35 V             ; -0.00832 V         ; 0.101 V                             ; 0.024 V                             ; 6.39e-10 s                 ; 6e-10 s                    ; Yes                       ; Yes                       ;
+; STATE[4]      ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 1.06e-06 V                   ; 2.36 V              ; -0.00724 V          ; 0.107 V                              ; 0.02 V                               ; 4.5e-10 s                   ; 4.25e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 1.06e-06 V                  ; 2.36 V             ; -0.00724 V         ; 0.107 V                             ; 0.02 V                              ; 4.5e-10 s                  ; 4.25e-10 s                 ; Yes                       ; Yes                       ;
+; STATE[3]      ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 1.06e-06 V                   ; 2.36 V              ; -0.00724 V          ; 0.107 V                              ; 0.02 V                               ; 4.5e-10 s                   ; 4.25e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 1.06e-06 V                  ; 2.36 V             ; -0.00724 V         ; 0.107 V                             ; 0.02 V                              ; 4.5e-10 s                  ; 4.25e-10 s                 ; Yes                       ; Yes                       ;
+; STATE[2]      ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 7.16e-07 V                   ; 2.36 V              ; -0.00476 V          ; 0.096 V                              ; 0.013 V                              ; 4.39e-10 s                  ; 4.15e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 7.16e-07 V                  ; 2.36 V             ; -0.00476 V         ; 0.096 V                             ; 0.013 V                             ; 4.39e-10 s                 ; 4.15e-10 s                 ; Yes                       ; Yes                       ;
+; STATE[1]      ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 1.06e-06 V                   ; 2.36 V              ; -0.00724 V          ; 0.107 V                              ; 0.02 V                               ; 4.5e-10 s                   ; 4.25e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 1.06e-06 V                  ; 2.36 V             ; -0.00724 V         ; 0.107 V                             ; 0.02 V                              ; 4.5e-10 s                  ; 4.25e-10 s                 ; Yes                       ; Yes                       ;
+; STATE[0]      ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 1.06e-06 V                   ; 2.36 V              ; -0.00724 V          ; 0.107 V                              ; 0.02 V                               ; 4.5e-10 s                   ; 4.25e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 1.06e-06 V                  ; 2.36 V             ; -0.00724 V         ; 0.107 V                             ; 0.02 V                              ; 4.5e-10 s                  ; 4.25e-10 s                 ; Yes                       ; Yes                       ;
+; TEST_OUT[4]   ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 1.06e-06 V                   ; 2.36 V              ; -0.00724 V          ; 0.107 V                              ; 0.02 V                               ; 4.5e-10 s                   ; 4.25e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 1.06e-06 V                  ; 2.36 V             ; -0.00724 V         ; 0.107 V                             ; 0.02 V                              ; 4.5e-10 s                  ; 4.25e-10 s                 ; Yes                       ; Yes                       ;
+; TEST_OUT[3]   ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 1.06e-06 V                   ; 2.36 V              ; -0.00724 V          ; 0.107 V                              ; 0.02 V                               ; 4.5e-10 s                   ; 4.25e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 1.06e-06 V                  ; 2.36 V             ; -0.00724 V         ; 0.107 V                             ; 0.02 V                              ; 4.5e-10 s                  ; 4.25e-10 s                 ; Yes                       ; Yes                       ;
+; TEST_OUT[2]   ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 7.16e-07 V                   ; 2.36 V              ; -0.00476 V          ; 0.096 V                              ; 0.013 V                              ; 4.39e-10 s                  ; 4.15e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 7.16e-07 V                  ; 2.36 V             ; -0.00476 V         ; 0.096 V                             ; 0.013 V                             ; 4.39e-10 s                 ; 4.15e-10 s                 ; Yes                       ; Yes                       ;
+; TEST_OUT[1]   ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 7.16e-07 V                   ; 2.36 V              ; -0.00476 V          ; 0.096 V                              ; 0.013 V                              ; 4.39e-10 s                  ; 4.15e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 7.16e-07 V                  ; 2.36 V             ; -0.00476 V         ; 0.096 V                             ; 0.013 V                             ; 4.39e-10 s                 ; 4.15e-10 s                 ; Yes                       ; Yes                       ;
+; TEST_OUT[0]   ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 1.06e-06 V                   ; 2.36 V              ; -0.00724 V          ; 0.107 V                              ; 0.02 V                               ; 4.5e-10 s                   ; 4.25e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 1.06e-06 V                  ; 2.36 V             ; -0.00724 V         ; 0.107 V                             ; 0.02 V                              ; 4.5e-10 s                  ; 4.25e-10 s                 ; Yes                       ; Yes                       ;
 ; ~ALTERA_DCLK~ ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 5.74e-07 V                   ; 2.36 V              ; -0.0201 V           ; 0.072 V                              ; 0.033 V                              ; 4.04e-10 s                  ; 3.29e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 5.74e-07 V                  ; 2.36 V             ; -0.0201 V          ; 0.072 V                             ; 0.033 V                             ; 4.04e-10 s                 ; 3.29e-10 s                 ; Yes                       ; Yes                       ;
 ; ~ALTERA_nCEO~ ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 9.45e-07 V                   ; 2.35 V              ; -0.00643 V          ; 0.081 V                              ; 0.031 V                              ; 5.31e-10 s                  ; 7.59e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 9.45e-07 V                  ; 2.35 V             ; -0.00643 V         ; 0.081 V                             ; 0.031 V                             ; 5.31e-10 s                 ; 7.59e-10 s                 ; Yes                       ; Yes                       ;
 +---------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
@@ -742,12 +739,17 @@ No synchronizer chains to report.
 +---------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
 ; Pin           ; I/O Standard ; Board Delay on Rise ; Board Delay on Fall ; Steady State Voh at FPGA Pin ; Steady State Vol at FPGA Pin ; Voh Max at FPGA Pin ; Vol Min at FPGA Pin ; Ringback Voltage on Rise at FPGA Pin ; Ringback Voltage on Fall at FPGA Pin ; 10-90 Rise Time at FPGA Pin ; 90-10 Fall Time at FPGA Pin ; Monotonic Rise at FPGA Pin ; Monotonic Fall at FPGA Pin ; Steady State Voh at Far-end ; Steady State Vol at Far-end ; Voh Max at Far-end ; Vol Min at Far-end ; Ringback Voltage on Rise at Far-end ; Ringback Voltage on Fall at Far-end ; 10-90 Rise Time at Far-end ; 90-10 Fall Time at Far-end ; Monotonic Rise at Far-end ; Monotonic Fall at Far-end ;
 +---------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
-; OUT           ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 2.74e-08 V                   ; 2.64 V              ; -0.0117 V           ; 0.202 V                              ; 0.176 V                              ; 2.38e-09 s                  ; 2.22e-09 s                  ; No                         ; Yes                        ; 2.62 V                      ; 2.74e-08 V                  ; 2.64 V             ; -0.0117 V          ; 0.202 V                             ; 0.176 V                             ; 2.38e-09 s                 ; 2.22e-09 s                 ; No                        ; Yes                       ;
-; STATE[4]      ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 2.74e-08 V                   ; 2.71 V              ; -0.0317 V           ; 0.148 V                              ; 0.064 V                              ; 4.51e-10 s                  ; 4.15e-10 s                  ; No                         ; Yes                        ; 2.62 V                      ; 2.74e-08 V                  ; 2.71 V             ; -0.0317 V          ; 0.148 V                             ; 0.064 V                             ; 4.51e-10 s                 ; 4.15e-10 s                 ; No                        ; Yes                       ;
-; STATE[3]      ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 2.74e-08 V                   ; 2.73 V              ; -0.0384 V           ; 0.169 V                              ; 0.089 V                              ; 2.7e-10 s                   ; 2.62e-10 s                  ; Yes                        ; Yes                        ; 2.62 V                      ; 2.74e-08 V                  ; 2.73 V             ; -0.0384 V          ; 0.169 V                             ; 0.089 V                             ; 2.7e-10 s                  ; 2.62e-10 s                 ; Yes                       ; Yes                       ;
-; STATE[2]      ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 2.74e-08 V                   ; 2.64 V              ; -0.0117 V           ; 0.202 V                              ; 0.176 V                              ; 2.38e-09 s                  ; 2.22e-09 s                  ; No                         ; Yes                        ; 2.62 V                      ; 2.74e-08 V                  ; 2.64 V             ; -0.0117 V          ; 0.202 V                             ; 0.176 V                             ; 2.38e-09 s                 ; 2.22e-09 s                 ; No                        ; Yes                       ;
-; STATE[1]      ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 2.74e-08 V                   ; 2.71 V              ; -0.0317 V           ; 0.148 V                              ; 0.064 V                              ; 4.51e-10 s                  ; 4.15e-10 s                  ; No                         ; Yes                        ; 2.62 V                      ; 2.74e-08 V                  ; 2.71 V             ; -0.0317 V          ; 0.148 V                             ; 0.064 V                             ; 4.51e-10 s                 ; 4.15e-10 s                 ; No                        ; Yes                       ;
-; STATE[0]      ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 2.74e-08 V                   ; 2.71 V              ; -0.0317 V           ; 0.148 V                              ; 0.064 V                              ; 4.51e-10 s                  ; 4.15e-10 s                  ; No                         ; Yes                        ; 2.62 V                      ; 2.74e-08 V                  ; 2.71 V             ; -0.0317 V          ; 0.148 V                             ; 0.064 V                             ; 4.51e-10 s                 ; 4.15e-10 s                 ; No                        ; Yes                       ;
+; Out           ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 2.74e-08 V                   ; 2.71 V              ; -0.0317 V           ; 0.148 V                              ; 0.064 V                              ; 4.51e-10 s                  ; 4.15e-10 s                  ; No                         ; Yes                        ; 2.62 V                      ; 2.74e-08 V                  ; 2.71 V             ; -0.0317 V          ; 0.148 V                             ; 0.064 V                             ; 4.51e-10 s                 ; 4.15e-10 s                 ; No                        ; Yes                       ;
+; STATE[4]      ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 4.05e-08 V                   ; 2.72 V              ; -0.0349 V           ; 0.173 V                              ; 0.1 V                                ; 2.72e-10 s                  ; 2.69e-10 s                  ; Yes                        ; Yes                        ; 2.62 V                      ; 4.05e-08 V                  ; 2.72 V             ; -0.0349 V          ; 0.173 V                             ; 0.1 V                               ; 2.72e-10 s                 ; 2.69e-10 s                 ; Yes                       ; Yes                       ;
+; STATE[3]      ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 4.05e-08 V                   ; 2.72 V              ; -0.0349 V           ; 0.173 V                              ; 0.1 V                                ; 2.72e-10 s                  ; 2.69e-10 s                  ; Yes                        ; Yes                        ; 2.62 V                      ; 4.05e-08 V                  ; 2.72 V             ; -0.0349 V          ; 0.173 V                             ; 0.1 V                               ; 2.72e-10 s                 ; 2.69e-10 s                 ; Yes                       ; Yes                       ;
+; STATE[2]      ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 2.74e-08 V                   ; 2.73 V              ; -0.0384 V           ; 0.169 V                              ; 0.089 V                              ; 2.7e-10 s                   ; 2.62e-10 s                  ; Yes                        ; Yes                        ; 2.62 V                      ; 2.74e-08 V                  ; 2.73 V             ; -0.0384 V          ; 0.169 V                             ; 0.089 V                             ; 2.7e-10 s                  ; 2.62e-10 s                 ; Yes                       ; Yes                       ;
+; STATE[1]      ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 4.05e-08 V                   ; 2.72 V              ; -0.0349 V           ; 0.173 V                              ; 0.1 V                                ; 2.72e-10 s                  ; 2.69e-10 s                  ; Yes                        ; Yes                        ; 2.62 V                      ; 4.05e-08 V                  ; 2.72 V             ; -0.0349 V          ; 0.173 V                             ; 0.1 V                               ; 2.72e-10 s                 ; 2.69e-10 s                 ; Yes                       ; Yes                       ;
+; STATE[0]      ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 4.05e-08 V                   ; 2.72 V              ; -0.0349 V           ; 0.173 V                              ; 0.1 V                                ; 2.72e-10 s                  ; 2.69e-10 s                  ; Yes                        ; Yes                        ; 2.62 V                      ; 4.05e-08 V                  ; 2.72 V             ; -0.0349 V          ; 0.173 V                             ; 0.1 V                               ; 2.72e-10 s                 ; 2.69e-10 s                 ; Yes                       ; Yes                       ;
+; TEST_OUT[4]   ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 4.05e-08 V                   ; 2.72 V              ; -0.0349 V           ; 0.173 V                              ; 0.1 V                                ; 2.72e-10 s                  ; 2.69e-10 s                  ; Yes                        ; Yes                        ; 2.62 V                      ; 4.05e-08 V                  ; 2.72 V             ; -0.0349 V          ; 0.173 V                             ; 0.1 V                               ; 2.72e-10 s                 ; 2.69e-10 s                 ; Yes                       ; Yes                       ;
+; TEST_OUT[3]   ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 4.05e-08 V                   ; 2.72 V              ; -0.0349 V           ; 0.173 V                              ; 0.1 V                                ; 2.72e-10 s                  ; 2.69e-10 s                  ; Yes                        ; Yes                        ; 2.62 V                      ; 4.05e-08 V                  ; 2.72 V             ; -0.0349 V          ; 0.173 V                             ; 0.1 V                               ; 2.72e-10 s                 ; 2.69e-10 s                 ; Yes                       ; Yes                       ;
+; TEST_OUT[2]   ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 2.74e-08 V                   ; 2.73 V              ; -0.0384 V           ; 0.169 V                              ; 0.089 V                              ; 2.7e-10 s                   ; 2.62e-10 s                  ; Yes                        ; Yes                        ; 2.62 V                      ; 2.74e-08 V                  ; 2.73 V             ; -0.0384 V          ; 0.169 V                             ; 0.089 V                             ; 2.7e-10 s                  ; 2.62e-10 s                 ; Yes                       ; Yes                       ;
+; TEST_OUT[1]   ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 2.74e-08 V                   ; 2.73 V              ; -0.0384 V           ; 0.169 V                              ; 0.089 V                              ; 2.7e-10 s                   ; 2.62e-10 s                  ; Yes                        ; Yes                        ; 2.62 V                      ; 2.74e-08 V                  ; 2.73 V             ; -0.0384 V          ; 0.169 V                             ; 0.089 V                             ; 2.7e-10 s                  ; 2.62e-10 s                 ; Yes                       ; Yes                       ;
+; TEST_OUT[0]   ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 4.05e-08 V                   ; 2.72 V              ; -0.0349 V           ; 0.173 V                              ; 0.1 V                                ; 2.72e-10 s                  ; 2.69e-10 s                  ; Yes                        ; Yes                        ; 2.62 V                      ; 4.05e-08 V                  ; 2.72 V             ; -0.0349 V          ; 0.173 V                             ; 0.1 V                               ; 2.72e-10 s                 ; 2.69e-10 s                 ; Yes                       ; Yes                       ;
 ; ~ALTERA_DCLK~ ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 2.22e-08 V                   ; 2.74 V              ; -0.06 V             ; 0.158 V                              ; 0.08 V                               ; 2.68e-10 s                  ; 2.19e-10 s                  ; Yes                        ; Yes                        ; 2.62 V                      ; 2.22e-08 V                  ; 2.74 V             ; -0.06 V            ; 0.158 V                             ; 0.08 V                              ; 2.68e-10 s                 ; 2.19e-10 s                 ; Yes                       ; Yes                       ;
 ; ~ALTERA_nCEO~ ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 3.54e-08 V                   ; 2.7 V               ; -0.00943 V          ; 0.276 V                              ; 0.035 V                              ; 3.19e-10 s                  ; 4.99e-10 s                  ; No                         ; Yes                        ; 2.62 V                      ; 3.54e-08 V                  ; 2.7 V              ; -0.00943 V         ; 0.276 V                             ; 0.035 V                             ; 3.19e-10 s                 ; 4.99e-10 s                 ; No                        ; Yes                       ;
 +---------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
@@ -758,8 +760,8 @@ No synchronizer chains to report.
 +------------+----------+----------+----------+----------+----------+
 ; From Clock ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
 +------------+----------+----------+----------+----------+----------+
-; ALOAD      ; CLOCK    ; 12       ; 29       ; 0        ; 0        ;
-; CLOCK      ; CLOCK    ; 12       ; 0        ; 0        ; 0        ;
+; ALOAD      ; CLOCK    ; 7        ; 19       ; 0        ; 0        ;
+; CLOCK      ; CLOCK    ; 7        ; 0        ; 0        ; 0        ;
 +------------+----------+----------+----------+----------+----------+
 Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
 
@@ -769,8 +771,8 @@ Entries labeled "false path" only account for clock-to-clock false paths and not
 +------------+----------+----------+----------+----------+----------+
 ; From Clock ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
 +------------+----------+----------+----------+----------+----------+
-; ALOAD      ; CLOCK    ; 12       ; 29       ; 0        ; 0        ;
-; CLOCK      ; CLOCK    ; 12       ; 0        ; 0        ; 0        ;
+; ALOAD      ; CLOCK    ; 7        ; 19       ; 0        ; 0        ;
+; CLOCK      ; CLOCK    ; 7        ; 0        ; 0        ; 0        ;
 +------------+----------+----------+----------+----------+----------+
 Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
 
@@ -815,9 +817,9 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 ; Illegal Clocks                  ; 0     ; 0    ;
 ; Unconstrained Clocks            ; 0     ; 0    ;
 ; Unconstrained Input Ports       ; 6     ; 6    ;
-; Unconstrained Input Port Paths  ; 30    ; 30   ;
-; Unconstrained Output Ports      ; 6     ; 6    ;
-; Unconstrained Output Port Paths ; 36    ; 36   ;
+; Unconstrained Input Port Paths  ; 36    ; 36   ;
+; Unconstrained Output Ports      ; 11    ; 11   ;
+; Unconstrained Output Port Paths ; 50    ; 50   ;
 +---------------------------------+-------+------+
 
 
@@ -850,12 +852,17 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 +-------------+---------------------------------------------------------------------------------------+
 ; Output Port ; Comment                                                                               ;
 +-------------+---------------------------------------------------------------------------------------+
-; OUT         ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; Out         ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
 ; STATE[0]    ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
 ; STATE[1]    ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
 ; STATE[2]    ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
 ; STATE[3]    ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
 ; STATE[4]    ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; TEST_OUT[0] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; TEST_OUT[1] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; TEST_OUT[2] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; TEST_OUT[3] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; TEST_OUT[4] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
 +-------------+---------------------------------------------------------------------------------------+
 
 
@@ -878,12 +885,17 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 +-------------+---------------------------------------------------------------------------------------+
 ; Output Port ; Comment                                                                               ;
 +-------------+---------------------------------------------------------------------------------------+
-; OUT         ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; Out         ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
 ; STATE[0]    ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
 ; STATE[1]    ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
 ; STATE[2]    ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
 ; STATE[3]    ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
 ; STATE[4]    ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; TEST_OUT[0] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; TEST_OUT[1] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; TEST_OUT[2] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; TEST_OUT[3] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; TEST_OUT[4] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
 +-------------+---------------------------------------------------------------------------------------+
 
 
@@ -893,7 +905,7 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 Info: *******************************************************************
 Info: Running Quartus Prime Timing Analyzer
     Info: Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
-    Info: Processing started: Fri Oct 02 16:08:39 2020
+    Info: Processing started: Thu Nov 12 21:16:18 2020
 Info: Command: quartus_sta MGenerator -c Mgenerator
 Info: qsta_default_script.tcl version: #1
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
@@ -904,22 +916,22 @@ Warning (335093): The Timing Analyzer is analyzing 5 combinational loops as latc
 Critical Warning (332012): Synopsys Design Constraints File file not found: 'Mgenerator.sdc'. A Synopsys Design Constraints File is required by the Timing Analyzer to get proper timing constraints. Without it, the Compiler will not properly optimize the design.
 Info (332142): No user constrained base clocks found in the design. Calling "derive_clocks -period 1.0"
 Info (332105): Deriving Clocks
-    Info (332105): create_clock -period 1.000 -name CLOCK CLOCK
     Info (332105): create_clock -period 1.000 -name ALOAD ALOAD
+    Info (332105): create_clock -period 1.000 -name CLOCK CLOCK
 Info (332143): No user constrained clock uncertainty found in the design. Calling "derive_clock_uncertainty"
 Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in the Timing Analyzer to see clock uncertainties.
 Info: Found TIMING_ANALYZER_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
 Info: Analyzing Slow 1200mV 85C Model
 Critical Warning (332148): Timing requirements not met
     Info (11105): For recommendations on closing timing, run Report Timing Closure Recommendations in the Timing Analyzer.
-Info (332146): Worst-case setup slack is -2.193
+Info (332146): Worst-case setup slack is -1.658
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -2.193             -10.124 CLOCK 
-Info (332146): Worst-case hold slack is 0.842
+    Info (332119):    -1.658              -7.864 CLOCK 
+Info (332146): Worst-case hold slack is 0.761
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     0.842               0.000 CLOCK 
+    Info (332119):     0.761               0.000 CLOCK 
 Info (332146): Worst-case recovery slack is 0.068
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
@@ -939,14 +951,14 @@ Info (334004): Delay annotation completed successfully
 Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in the Timing Analyzer to see clock uncertainties.
 Critical Warning (332148): Timing requirements not met
     Info (11105): For recommendations on closing timing, run Report Timing Closure Recommendations in the Timing Analyzer.
-Info (332146): Worst-case setup slack is -1.922
+Info (332146): Worst-case setup slack is -1.481
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -1.922              -8.778 CLOCK 
-Info (332146): Worst-case hold slack is 0.774
+    Info (332119):    -1.481              -7.066 CLOCK 
+Info (332146): Worst-case hold slack is 0.705
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     0.774               0.000 CLOCK 
+    Info (332119):     0.705               0.000 CLOCK 
 Info (332146): Worst-case recovery slack is 0.121
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
@@ -964,14 +976,14 @@ Info: Analyzing Fast 1200mV 0C Model
 Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in the Timing Analyzer to see clock uncertainties.
 Critical Warning (332148): Timing requirements not met
     Info (11105): For recommendations on closing timing, run Report Timing Closure Recommendations in the Timing Analyzer.
-Info (332146): Worst-case setup slack is -1.344
+Info (332146): Worst-case setup slack is -1.008
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -1.344              -6.464 CLOCK 
-Info (332146): Worst-case hold slack is 0.503
+    Info (332119):    -1.008              -4.888 CLOCK 
+Info (332146): Worst-case hold slack is 0.704
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     0.503               0.000 CLOCK 
+    Info (332119):     0.704               0.000 CLOCK 
 Info (332146): Worst-case recovery slack is -0.056
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
@@ -988,9 +1000,9 @@ Info (332146): Worst-case minimum pulse width slack is -3.000
 Info (332102): Design is not fully constrained for setup requirements
 Info (332102): Design is not fully constrained for hold requirements
 Info: Quartus Prime Timing Analyzer was successful. 0 errors, 6 warnings
-    Info: Peak virtual memory: 4777 megabytes
-    Info: Processing ended: Fri Oct 02 16:08:43 2020
-    Info: Elapsed time: 00:00:04
-    Info: Total CPU time (on all processors): 00:00:04
+    Info: Peak virtual memory: 4768 megabytes
+    Info: Processing ended: Thu Nov 12 21:16:21 2020
+    Info: Elapsed time: 00:00:03
+    Info: Total CPU time (on all processors): 00:00:02
 
 
